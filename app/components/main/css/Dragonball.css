@@ -1,0 +1,55 @@
+.bubble{
+    z-index: 10;
+    transition: all 1s;
+    transform: translateY(-60px);
+}
+
+.bubble-low{
+    z-index: 10;
+    transition: all 1s;
+    transform: translateY(-40px);
+}
+
+/* 1번컷 */
+.cut0{
+    transition: all 2s;
+    transform: translateX(100vw);
+}
+
+.move-cut0{
+    transform: translateX(0);
+}
+
+/*2번컷*/
+.cut3{
+    transition: all 8s;
+    opacity: 0;
+}
+
+.move-cut3{
+    opacity: 1;
+}
+
+/*3번컷*/
+.cut2{
+    transition: all 6s;
+    opacity: 0;
+    transform: translateY(300px);
+}
+
+.move-cut2{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* 4번컷 */
+.cut1{
+    transition: all 8s;
+    opacity: 0;
+    transform: translateX(-100vw);
+}
+
+.move-cut1{
+    transform: translateX(00vw);
+    opacity: 1;
+}

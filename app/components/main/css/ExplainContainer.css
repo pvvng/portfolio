@@ -1,0 +1,72 @@
+.main-title{
+    font-size: 64px;
+    animation: shake-title 1.5s ease-in-out;
+    cursor: pointer;
+}
+
+@media screen and (max-width : '') {
+    
+}
+
+.sub-title{
+    font-size: 40px;
+    animation: shake-title 2s ease-in-out;
+    cursor: pointer;
+}
+
+.ani-btn{
+    animation: shake-title 2.5s ease-in-out;
+}
+
+@keyframes shake-title{
+    0% {
+        transform: translateY(130px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    1000% {
+        transform: translateY(0px);
+    }
+}
+
+
+/* 화면 너비가 1200px 이하일 때 */
+@media (max-width: 1200px) {
+    .main-title {
+        font-size: 56px;
+    }
+    .sub-title {
+        font-size: 28px;
+    }
+}
+
+/* 화면 너비가 900px 이하일 때 */
+@media (max-width: 1024px) {
+    .main-title {
+        font-size: 48px;
+    }
+    .sub-title {
+        font-size: 24px;
+    }
+}
+
+/* 화면 너비가 600px 이하일 때 */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 36px;
+    }
+    .sub-title {
+        font-size: 18px;
+    }
+}
+
+/* 화면 너비가 400px 이하일 때 */
+@media (max-width: 340px) {
+    .main-title {
+        font-size: 28px;
+    }
+    .sub-title {
+        font-size: 14px;
+    }
+}

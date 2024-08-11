@@ -1,5 +1,7 @@
 'use client';
 
+import useTitleFlagStore from '@/app/store';
+import './css/Dragonball.css';
 import { useEffect, useState } from "react";
 
 const IMAGE_URL = [
@@ -11,9 +13,10 @@ const IMAGE_URL = [
 
 export default function DrangonBallContainer() {
 
+    // title flag store
+    const { titleFlag } = useTitleFlagStore();
     // 초기값을 IMAGE_URL.length로 설정
     const [activeIndex, setActiveIndex] = useState(IMAGE_URL.length); 
-
     // viewPort 사이즈 검증
     const [nowViewPortSize, setNowViewPortSize] = useState(0);
 
@@ -40,6 +43,9 @@ export default function DrangonBallContainer() {
         // 활성화된 컷 인덱스 업데이트
         updateActiveIndex();
     }, [activeIndex]);
+
+    // 원기옥 사이즈 검증하는 플래그, true면 이 컴포넌트 안보이게
+    if(titleFlag) return null;
 
     return (
         <div

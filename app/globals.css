@@ -6,6 +6,10 @@ div{
     box-sizing: border-box;
 }
 
+button{
+    font-weight: bold;
+}
+
 .p-btn{
     padding: 10px;
     background: none;
@@ -13,11 +17,15 @@ div{
     transition: all 0.6s;
 }
 
+.bg-genkidama{
+    color: white;
+    background: rgba(0, 153, 255, 1);
+}
+
 .btn-genkidama{
     color: white;
     border : 1px solid rgba(0, 153, 255, 1);
     background: rgba(0, 153, 255, 1);
-
 }
 
 .btn-genkidama:hover{
@@ -26,106 +34,14 @@ div{
     color: white;
 }
 
-.bubble{
-    z-index: 10;
-    transition: all 1s;
-    transform: translateY(-60px);
+.btn-white{
+    color: rgba(0, 153, 255, 1);
+    border : 1px solid rgba(0, 153, 255, 1);
+    background: white;
 }
 
-.bubble-low{
-    z-index: 10;
-    transition: all 1s;
-    transform: translateY(-40px);
-}
-
-/* 1번컷 */
-.cut0{
-    transition: all 2s;
-    transform: translateX(100vw);
-}
-
-.move-cut0{
-    transform: translateX(0);
-}
-
-/*2번컷*/
-.cut3{
-    transition: all 8s;
-    opacity: 0;
-}
-
-.move-cut3{
-    opacity: 1;
-}
-
-/*3번컷*/
-.cut2{
-    transition: all 6s;
-    opacity: 0;
-    transform: translateY(300px);
-}
-
-.move-cut2{
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-/* 4번컷 */
-.cut1{
-    transition: all 8s;
-    opacity: 0;
-    transform: translateX(-100vw);
-}
-
-.move-cut1{
-    transform: translateX(00vw);
-    opacity: 1;
-}
-
-.aura-circle {
-    background-color: white; /* 원 내부 색상 */
-    position: relative;
-    z-index: 1;
-    animation: aura-animation 4s infinite;
-    margin : auto;
-    transition : all 0.5s;
-    background : white;
-    justify-content : center;
-    align-items : center;
-    display : flex;
-}
-
-@keyframes aura-animation {
-    0% {
-        box-shadow: 0 0 10px 5px rgba(0, 153, 255, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 20px 15px rgba(0, 153, 255, 0.7), 
-                    0 0 30px 25px rgba(0, 153, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 10px 5px rgba(0, 153, 255, 0.5);
-    }
-}
-
-.shake-animation {
-    animation: shake 5s infinite;
-}
-
-@keyframes shake {
-    0% {
-        transform: translateY(0);
-    }
-    25% {
-        transform: translateY(-5px);
-    }
-    50% {
-        transform: translateY(5px);
-    }
-    75% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+.btn-white:hover{
+    border : 1px solid white;
+    background: none;
+    color: white;
 }

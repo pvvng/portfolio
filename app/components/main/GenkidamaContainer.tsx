@@ -2,22 +2,25 @@
 
 import { useEffect, useState } from "react";
 import SonGohanContainer from "./Gohan";
+import './css/GenkidamaContainer.css';
+import useTitleFlagStore from "@/app/store";
+import ExplainCotainer from "./ExplainContainer";
 
 export default function GenkidamaContainer(){
 
+    // 원기옥 크기 더 늘릴수 없을때 title 보여주기
+    const { titleFlag, setTitleFlag } = useTitleFlagStore();
     // 실제 뷰포트 사이즈
     const [viewPortSize, setViewPortSize] = useState(0);
     // 사용자 뷰포트의 실제 넓이의 10퍼센트
     const [genkidamaSize, setGenkidamaSize] = useState(0);
-    // 원기옥 크기 더 늘릴수 없을때 title 보여주기
-    const [titleState, setTitleState] = useState(false);
 
     useEffect(() => {
 
         const calculateWidth = () => {
             setGenkidamaSize(document.documentElement.clientWidth * 0.1);
             setViewPortSize(document.documentElement.clientWidth);
-            setTitleState(false);
+            setTitleFlag(false);
         };
     
         // 페이지가 로드될 때와 창이 리사이즈될 때 
@@ -33,44 +36,39 @@ export default function GenkidamaContainer(){
         };
     }, []);
 
+    useEffect(() => {
+        console.log(genkidamaSize, viewPortSize * 0.5)
+    },[genkidamaSize])
+
     if(genkidamaSize === 0 || viewPortSize === 0) return null
 
     return(
-        <div className="p-2 mt-5">
+        <div className="p-2" style={{margin :'auto'}}>
             {
-                !titleState ?
-                <p className="text-center fw-bold mb-5">원기옥을 클릭해 오공을 도와주세요!</p>:
-                <div className="text-center fw-bold mb-5">
-                    <h1 className="mb-4">
-                        안녕하세요!
-                        <br/>
-                        프론트엔드 개발자 김동우입니다.
-                    </h1>
-                    <button className="p-btn btn-genkidama">포트폴리오 확인하기 😉</button>
-                </div>
+                !titleFlag ?
+                <p className="text-center fw-bold">원기옥을 클릭해 오공을 도와주세요!</p>:
+                <ExplainCotainer />
             }
             <div 
+                className="aura-circle-container"
                 style={{
-                    width : viewPortSize * 0.5, 
-                    height : viewPortSize * 0.5,
-                    display : 'flex',
-                    justifyContent:'center',
-                    alignItems : 'center',
-                    margin : 'auto'
-                }}>
+                    width : viewPortSize * 0.5 < 1600 ? viewPortSize * 0.5 : 1600, 
+                    height : viewPortSize * 0.5 < 1600 ? viewPortSize * 0.5 : 1600,
+                }}
+                >
                 <div 
                     className="aura-circle"
                     onClick={() => {
-                        if(genkidamaSize <= viewPortSize * 0.5){
+                        if(genkidamaSize <= (viewPortSize * 0.5 < 768 ? viewPortSize * 0.5 : 768)){
                             setGenkidamaSize(pre => pre * 1.5);
                         }else{
-                            setTitleState(true);
+                            setTitleFlag(true);
                         }
                     }}
                     style={{
                         width : genkidamaSize, 
                         height : genkidamaSize, 
-                        borderRadius: titleState ? '10px' : '50%',
+                        borderRadius: titleFlag ? '10px' : '50%',
                     }}
                 >
                     <div
@@ -79,15 +77,15 @@ export default function GenkidamaContainer(){
                             width : '80%',
                             maxWidth : '360px',
                             transition : 'all 1s',
-                            opacity : titleState ? 1 : 0,
-                            visibility : titleState ? 'visible' : 'hidden'
+                            opacity : titleFlag ? 1 : 0,
+                            visibility : titleFlag ? 'visible' : 'hidden'
                         }}>
-                            <img src="/main/이모티콘.png" width="100%" />
+                            <img src="/main/character.png" width="100%" />
                     </div>
                 </div>
             </div>
             {
-                !titleState &&
+                !titleFlag &&
                 <SonGohanContainer />
             }
         </div>
