@@ -1,0 +1,44 @@
+.folder-container{
+    width : 80px;
+    text-align: center;
+}
+
+.folder {
+    position: relative;
+    width: 80px;
+    height: 60px;
+    background-color: #ffd966;
+    border: 2px solid #d4b000;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+}
+
+.folder-tab {
+    width: 30px;
+    height: 15px;
+    background-color: #ffd966;
+    border: 2px solid #d4b000;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+}
+
+.percpctive-img{
+    transition: all 1s;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+.taskbar{
+    width : 100%;
+    background: #eee;
+}
+
+.social-icon-btn{
+    background-color: #eee;
+    border : none;
+}
+
+.social-icon-btn:hover{
+    background-color: rgb(153, 153, 153);
+    border-radius: 50%;
+}
