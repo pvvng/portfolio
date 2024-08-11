@@ -10,6 +10,7 @@ const IMAGE_URL = [
 ];
 
 export default function DrangonBallContainer() {
+
     // 초기값을 IMAGE_URL.length로 설정
     const [activeIndex, setActiveIndex] = useState(IMAGE_URL.length); 
 
@@ -39,7 +40,6 @@ export default function DrangonBallContainer() {
         // 활성화된 컷 인덱스 업데이트
         updateActiveIndex();
     }, [activeIndex]);
-    
 
     return (
         <div
@@ -50,29 +50,33 @@ export default function DrangonBallContainer() {
                 position: 'relative',
                 overflow: 'hidden'
             }}>
-            <img
-                className={`bubble${nowViewPortSize <= 340 ? '-low':''}`}
-                src="/main/말풍선.png"
-                width="100%"
-                height="100%"
-                style={{ position: 'absolute', padding: 0 }}
-            />
-            {IMAGE_URL.map((data, i) => {
-                return (
-                    <div
-                        id={`image-div-${i}`}
-                        key={data.url + i.toString() + data.classname}
-                        className={
-                            `${data.classname} ${activeIndex <= i ? `move-cut${i}` : ''}`
-                        }>
-                        <img
-                            src={data.url}
-                            width="100%"
-                            height="auto"
-                        />
-                    </div>
-                )
-            })}
+                {
+                    activeIndex !== IMAGE_URL.length &&
+                    <img
+                        className={`bubble${nowViewPortSize <= 340 ? '-low':' '}`}
+                        src="/main/말풍선.png"
+                        width="100%"
+                        height="100%"
+                        style={{ position: 'absolute', padding: 0 }}
+                    />
+                }
+
+                {IMAGE_URL.map((data, i) => {
+                    return (
+                        <div
+                            id={`image-div-${i}`}
+                            key={data.url + i.toString() + data.classname}
+                            className={
+                                `${data.classname} ${activeIndex <= i ? `move-cut${i}` : ''}`
+                            }>
+                            <img
+                                src={data.url}
+                                width="100%"
+                                height="auto"
+                            />
+                        </div>
+                    )
+                })}
         </div>
     )
 }
