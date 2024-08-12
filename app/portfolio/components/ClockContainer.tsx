@@ -20,9 +20,10 @@ export default function ClockContainer(){
 
     return(
         <div>
-            <p className="m-0 text-black">
-                {currentTime}
-            </p>
+            <div className="m-0 text-black">
+                <p className="m-0">{currentTime.split(' ')[0]}</p>
+                <p className="m-0">{currentTime.split(' ')[1]}</p>
+            </div>
         </div>
     )
 }

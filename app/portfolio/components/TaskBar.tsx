@@ -14,12 +14,6 @@ export default function TaskBar(){
                     alignItems : 'center'
                 }}
             >
-                <div className="col-2 text-center">
-                    <button className="p-btn social-icon-btn">
-                        <Image src="/main/character.png" width="30" height="30" alt="main-character" />
-                    </button>
-                </div>
-            
                 <div className='col-6 text-center'>
                     <button className="p-btn social-icon-btn">
                         <Image src="/stack/github.png" width="30" height="30" alt="github-logo" />
@@ -27,9 +21,9 @@ export default function TaskBar(){
                     <button className="p-btn social-icon-btn">
                         <Image src="/stack/velog-icon.webp" width="30" height="30" alt="velog-logo" />
                     </button>
-                </div>
+                </div> 
 
-                <div className='col-4 text-center'>
+                <div className='col-6 text-center'>
                     <ClockContainer />
                 </div>
             </div>

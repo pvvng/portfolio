@@ -1,0 +1,62 @@
+.bg-font{
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(123, 123, 123);
+    position: absolute;
+    top : 20px;
+    left: calc(50% - 54px);
+}
+
+.header-title{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.top-container{
+    overflow: hidden;
+    position: relative;
+    transition: all 1s;
+}
+
+.about-me-container{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.hover-btn {
+    position: relative; /* 버튼의 위치를 기준으로 툴팁을 배치할 수 있게 합니다 */
+    background: transparent; /* 버튼 배경 제거 */
+    border: none; /* 버튼의 기본 테두리 제거 */
+    cursor: pointer; /* 마우스 커서 변경 */
+}
+
+.tooltip-link {
+    opacity: 0; /* 기본적으로 투명하게 설정 */
+    position: absolute; /* 버튼을 기준으로 위치 설정 */
+    bottom: 110%; /* 버튼 상단에 위치하도록 설정 */
+    left: 50%; /* 버튼 중앙에 위치하도록 설정 */
+    transform: translateX(-50%); /* 중앙 정렬 */
+    background-color: #333; /* 배경색 */
+    color: #fff; /* 텍스트 색상 */
+    padding: 5px 10px; /* 패딩 */
+    border-radius: 5px; /* 테두리 둥글게 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    transition: opacity 0.3s, visibility 0.3s; /* 부드러운 트랜지션 효과 */
+    z-index: 10; /* 툴팁이 다른 요소 위에 표시되도록 설정 */
+}
+
+.tooltip-link::before {
+    content: ''; /* 빈 콘텐츠 */
+    position: absolute; /* 절대 위치 설정 */
+    bottom: -10px; /* 버튼과 툴팁 사이의 간격 설정 */
+    left: 50%; /* 툴팁 중앙에 위치하도록 설정 */
+    transform: translateX(-50%); /* 중앙 정렬 */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* 왼쪽 경계선 */
+    border-right: 10px solid transparent; /* 오른쪽 경계선 */
+    border-top: 10px solid #333; /* 위쪽 경계선 (말풍선 색상과 일치) */
+}
+
+.hover-btn:hover .tooltip-link{
+    opacity: 1;
+}

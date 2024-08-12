@@ -29,7 +29,11 @@
 }
 
 .taskbar{
+    position: fixed;
+    bottom: 0;
+    left : 0;
     width : 100%;
+    z-index: 1000;
     background: #eee;
 }
 
@@ -40,5 +44,142 @@
 
 .social-icon-btn:hover{
     background-color: rgb(153, 153, 153);
+    border-radius: 10%;
+}
+
+.bg-container{
+    position : absolute; 
+    bottom : 30px; 
+    right : 10px;
+    z-index: 0;
+}
+
+@media screen and (max-width : 700px) {
+    .bg-container{
+        right : 0px;
+    }
+}
+
+.background-image{
+    opacity : 0.5;
+    transition: all 0.5s;
+}
+
+.text-tooltip{
+    margin-bottom: 0;
+    opacity: 0;
+    transition: all 0.5s;
+    background-color: white;
+    padding : 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: black;
+    position: relative; 
+}
+
+/* 말풍선 꼬리 */
+.text-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -18px; /* 말풍선 아래에 배치 */
+    left: 50%; /* 중앙에 배치 */
+    transform: translateX(-50%); /* 중앙 정렬 */
+    border-width: 10px; /* 삼각형 크기 조절 */
+    border-style: solid;
+    border-color: white transparent transparent transparent; /* 하단에 흰색 삼각형 */
+}
+
+.text-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* 말풍선 아래에 배치 */
+    left: 50%; /* 중앙에 배치 */
+    transform: translateX(-50%); /* 중앙 정렬 */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid white; /* 위쪽이 흰색이 되도록 설정 */
+}
+
+.bg-container:hover .background-image {
+    opacity: 1;
+}
+
+.bg-container:hover .text-tooltip {
+    opacity: 1;
+}
+
+@media screen and (max-width : 700px) {
+    .margin-container{
+        margin: auto;
+    }
+}
+
+/* 윈도우 전체 컨테이너 */
+.window {
+    max-width: 1024px;
+    margin : auto;    
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* 윈도우 헤더 (상단 바) */
+.window-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 윈도우 버튼들 컨테이너 */
+.window-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+/* 공통 버튼 스타일 */
+.window-buttons button {
+    width: 16px;
+    height: 16px;
+    border: none;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 닫기 버튼 */
+.close-button {
+    background-color: #ff5f56;
+}
+
+/* 최소화 버튼 */
+.minimize-button {
+    background-color: #ffbd2e;
+}
+
+/* 최대화 버튼 */
+.maximize-button {
+    background-color: #27c93f;
+}
+
+/* 윈도우 제목 */
+.window-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 윈도우 내용 컨테이너 */
+.window-content {
+    background-color: #fff;
+    overflow-y: auto; /* y축 스크롤 허용 */
 }

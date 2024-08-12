@@ -1,6 +1,6 @@
 'use client';
 
-import useTitleFlagStore from '@/app/store';
+import { useTitleFlagStore } from '@/app/store';
 import './css/Dragonball.css';
 import { useEffect, useState } from "react";
 

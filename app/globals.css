@@ -10,6 +10,12 @@ button{
     font-weight: bold;
 }
 
+.row-center{
+    justify-content: center;
+    align-items: center;
+    margin : auto;
+}
+
 .p-btn{
     padding: 10px;
     background: none;
@@ -44,4 +50,9 @@ button{
     border : 1px solid white;
     background: none;
     color: white;
+}
+
+.badge {
+    padding : 5px;
+    border-radius: 5px;
 }

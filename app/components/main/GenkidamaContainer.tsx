@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import SonGohanContainer from "./Gohan";
 import './css/GenkidamaContainer.css';
-import useTitleFlagStore from "@/app/store";
+import { useTitleFlagStore } from "@/app/store";
 import ExplainCotainer from "./ExplainContainer";
 
 export default function GenkidamaContainer(){

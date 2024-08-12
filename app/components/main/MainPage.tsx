@@ -1,6 +1,6 @@
 'use client'
 
-import useTitleFlagStore from "@/app/store";
+import { useTitleFlagStore } from "@/app/store";
 import DrangonBallContainer from "./DragonballContainer";
 import GenkidamaContainer from "./GenkidamaContainer";
 

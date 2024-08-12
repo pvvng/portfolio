@@ -5,9 +5,27 @@ interface TitleFlagStoreType {
     setTitleFlag: (value: boolean) => void;
 }
 
-const useTitleFlagStore = create<TitleFlagStoreType>((set) => ({
+export const useTitleFlagStore = create<TitleFlagStoreType>((set) => ({
     titleFlag: false,  // 초기값
     setTitleFlag: (value :boolean) => set({ titleFlag: value }),  // 플래그 값 설정 함수
 }));
 
-export default useTitleFlagStore;
+export interface WindowState {
+    isMinimized: boolean;
+    isMaximized: boolean;
+    isClosed: boolean;
+    minimize: () => void;
+    maximize: () => void;
+    close: () => void;
+}
+
+export const useWindowStore = create<WindowState>((set) => ({
+  isMinimized: true,
+  isMaximized: false,
+  isClosed: false,
+  minimize: () => set(() => ({ isMinimized: true, isMaximized: false, isClosed: false })),
+  maximize: () => set(() => ({ isMinimized: false, isMaximized: true, isClosed: false })),
+  close: () => set(() => ({ isMinimized: false, isMaximized: false, isClosed: true })),
+}));
+
+  
