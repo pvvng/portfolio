@@ -1,22 +1,13 @@
 'use client';
 
-import { RefObject, useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function FolderContainer(
     {folderName, index} : 
     {folderName :string, index : number}
 ){
 
-    const [isMount, setIsMount] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
-
-    useEffect(() => {
-        setIsMount(true);
-
-        return () => {setIsMount(false)}
-    },[])
-
-    // if(!isMount) return null;
 
     return (
         <div className='margin-container' style={{width : '80px', height : '120px', zIndex : 10}}>

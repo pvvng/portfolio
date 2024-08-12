@@ -60,3 +60,8 @@
 .hover-btn:hover .tooltip-link{
     opacity: 1;
 }
+
+.interview-container{
+    border-radius: 20px;
+    background-color: #434343;
+}

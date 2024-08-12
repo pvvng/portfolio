@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import '../folder.css';
+import SkillBadge from "./SkillBadge";
+
+
 
 export default function AboutMe(){
 
@@ -53,8 +56,8 @@ export default function AboutMe(){
                 'p-3 animate__animated animate__slideInUp'
                 }
             >
-                <h2 className='header-title text-center'>about me</h2>
-                <div className="text-center" style={{margin : 'auto'}}>
+                <h2 className='header-title'>about me</h2>
+                <div style={{margin : 'auto'}}>
                     <span className='badge bg-dark' style={{marginRight : 5}}>#추진력</span>
                     <span className='badge bg-dark' style={{marginRight : 5}}>#메타인지</span>
                     <span className='badge bg-dark' style={{marginRight : 5}}>#열정</span>
@@ -62,16 +65,15 @@ export default function AboutMe(){
             </div>
             <br />
             <div className="row row-center w-100" style={{margin : 'auto'}}>
-                <div className="col-sm-4 col-12 mb-sm-0 mb-4">
+                <div className="col-sm-6 col-12 mb-sm-0 mb-4">
                     <img src="/main/character.png" width="100%" alt="main-chracter" />
                 </div>
-                <div className="col-sm-4 col-12 text-left">
+                <div className="col-sm-6 col-12 text-center">
                     <p><FontAwesomeIcon icon={faCakeCandles} />{' '}2002.12.21</p>
                     <p><FontAwesomeIcon icon={faPerson} />{' '}남성</p>
                     <p><FontAwesomeIcon icon={faAddressBook} />{' '}t6u80o@naver.com</p>
                     <span className="badge bg-dark mb-3">Frontend-developer</span>
-                    <br/>
-
+                    <br/>                   
                     <button className="p-btn social-icon-btn hover-btn" style={{marginRight : '5px'}}>
                         <Image src="/stack/github.png" width="30" height="30" alt="github-logo" />
                         <span className="tooltip-link">Github</span>
@@ -81,8 +83,8 @@ export default function AboutMe(){
                         <span className="tooltip-link">Velog</span>
                     </button>
                 </div>
-
             </div>
+            <SkillBadge />
         </div>
     )
 }
