@@ -28,4 +28,12 @@ export const useWindowStore = create<WindowState>((set) => ({
   close: () => set(() => ({ isMinimized: false, isMaximized: false, isClosed: true })),
 }));
 
-  
+interface FolderStoreType {
+  number: number;
+  setNumber: (value : number) => void;
+}
+
+export const useFolderStore = create<FolderStoreType>((set) => ({
+  number: 0,  // 초기값은 0
+  setNumber: (value: number) => set({ number: value }),
+}));

@@ -2,9 +2,10 @@
 
 import '../folder.css';
 import 'animate.css';
-import Overview from './overview';
+import Overview from './Overview';
 import AboutMe from './AboutMe';
 import Interview from './Interview';
+import CareerContainer from './CareerContainer';
 
 export default function MainAboutMeContainer({scrollTop} : {scrollTop : number}) {
 
@@ -13,6 +14,7 @@ export default function MainAboutMeContainer({scrollTop} : {scrollTop : number})
             <Overview />
             <AboutMe />
             <Interview scrollTop = {scrollTop} />
+            <CareerContainer />
         </>
     );
 }

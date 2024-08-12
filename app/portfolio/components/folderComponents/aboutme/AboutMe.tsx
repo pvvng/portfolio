@@ -5,8 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import '../folder.css';
 import SkillBadge from "./SkillBadge";
 
-
-
 export default function AboutMe(){
 
     const [inView, setInView] = useState(false);
@@ -19,9 +17,6 @@ export default function AboutMe(){
                 if (entry.isIntersecting) {
                     // 요소가 뷰포트에서 보일때
                     setInView(true);
-                } else {
-                    // 요소가 뷰포트에서 보이지 않을 때
-                    setInView(false); 
                 }
             });
         }, {
@@ -65,14 +60,21 @@ export default function AboutMe(){
             </div>
             <br />
             <div className="row row-center w-100" style={{margin : 'auto'}}>
-                <div className="col-sm-6 col-12 mb-sm-0 mb-4">
-                    <img src="/main/character.png" width="100%" alt="main-chracter" />
+                <div className="col-sm-6 col-lg-6 col-12 mb-sm-0 mb-4">
+                    <img src="/main/character.png" width="100%" style={{maxWidth : '360px'}} alt="main-chracter" />
                 </div>
-                <div className="col-sm-6 col-12 text-center">
-                    <p><FontAwesomeIcon icon={faCakeCandles} />{' '}2002.12.21</p>
-                    <p><FontAwesomeIcon icon={faPerson} />{' '}남성</p>
-                    <p><FontAwesomeIcon icon={faAddressBook} />{' '}t6u80o@naver.com</p>
-                    <span className="badge bg-dark mb-3">Frontend-developer</span>
+                <div className="col-sm-6 col-lg-6 col-12 text-center p-2">
+                    <h4 className="header-title">김동우</h4>
+                    <div className="pt-2">
+                        <p className="m-0">명지대학교 / 정보통신공학과</p>
+                        <p className="m-0">(2022년 입학 ~ 재학 중)</p>
+                    </div>
+                    <div className="pt-2">
+                        <span>{' '}2002.12.21</span>
+                        <span>{' '}남성</span>
+                        <p className="m-0">t6u80o@naver.com</p>
+                    </div>
+                    <span className="badge bg-dark mb-3 mt-2">Frontend-developer</span>
                     <br/>                   
                     <button className="p-btn social-icon-btn hover-btn" style={{marginRight : '5px'}}>
                         <Image src="/stack/github.png" width="30" height="30" alt="github-logo" />

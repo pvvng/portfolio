@@ -3,7 +3,6 @@ import Image from "next/image";
 const COLLABO_SKILL = [
     {url : "/stack/Git.svg", name : 'Git'},
     {url : "/stack/github.png", name : 'Github'},
-
 ]
 
 const DEPLOY_SKILLS = [
@@ -11,14 +10,20 @@ const DEPLOY_SKILLS = [
     {url : "/stack/Netlify-Dark.svg", name : 'Netlify'},
 ]
 
-const FRONTEND_SKILL = [
-    {url : "/stack/React.svg", name : 'React.js'},
-    {url : "/stack/Next.svg", name : 'Next.js'},
+const FRONTEND_SKILL1 = [
     {url : "/stack/HTML.svg", name : 'HTML'},
     {url : "/stack/Css.svg", name : 'CSS'},
     {url : "/stack/JavaScript.svg", name : 'JavaScript'},
-    {url : "/stack/TypeScript.svg", name : 'TypeScript'},
     {url : "/stack/JQuery.svg", name : 'Jquery'},
+]
+
+const FRONTEND_SKILL2 = [
+    {url : "/stack/React.svg", name : 'React.js'},
+    {url : "/stack/Next.svg", name : 'Next.js'},
+    {url : "/stack/TypeScript.svg", name : 'TypeScript'},
+]
+
+const FRONTEND_SKILL3 = [
     {url : "/stack/Redux.svg", name : 'Redux toolkit'},
     {url : "/stack/zustand-logo.png", name : 'Zustand'},
     {url : "/stack/Sass.svg", name : 'SASS / SCSS'},
@@ -37,7 +42,27 @@ export default function SkillBadge(){
             <p className="fw-bold">Frontend</p>
             <div className="w-100" style={{margin : 'auto'}}>
                 {
-                    FRONTEND_SKILL.map(sbd => 
+                    FRONTEND_SKILL1.map(sbd => 
+                        <span key={sbd.name} className="badge mb-3" style={{marginRight : '5px', background : 'grey'}}>
+                            <Image src={sbd.url} width="15" height="15" alt={sbd.name} />
+                            {' '}{sbd.name}
+                        </span>
+                    )
+                }
+            </div>
+            <div className="w-100" style={{margin : 'auto'}}>
+                {
+                    FRONTEND_SKILL2.map(sbd => 
+                        <span key={sbd.name} className="badge mb-3" style={{marginRight : '5px', background : 'grey'}}>
+                            <Image src={sbd.url} width="15" height="15" alt={sbd.name} />
+                            {' '}{sbd.name}
+                        </span>
+                    )
+                }
+            </div>
+            <div className="w-100" style={{margin : 'auto'}}>
+                {
+                    FRONTEND_SKILL3.map(sbd => 
                         <span key={sbd.name} className="badge mb-3" style={{marginRight : '5px', background : 'grey'}}>
                             <Image src={sbd.url} width="15" height="15" alt={sbd.name} />
                             {' '}{sbd.name}

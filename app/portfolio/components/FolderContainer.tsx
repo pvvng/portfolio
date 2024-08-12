@@ -1,5 +1,6 @@
 'use client';
 
+import { useFolderStore, useWindowStore } from '@/app/store';
 import { useState } from 'react';
 
 export default function FolderContainer(
@@ -8,6 +9,8 @@ export default function FolderContainer(
 ){
 
     const [isHovered, setIsHovered] = useState(false);
+    const { setNumber } = useFolderStore();
+    const {isClosed, minimize} = useWindowStore();
 
     return (
         <div className='margin-container' style={{width : '80px', height : '120px', zIndex : 10}}>
@@ -20,7 +23,12 @@ export default function FolderContainer(
                 }}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                onDoubleClick={() => {console.log(folderName)}}
+                onDoubleClick={() => {
+                    setNumber(index); 
+                    if(isClosed){
+                        minimize();
+                    }
+                }}
             >
                 <div className="row" style={{ margin: 'auto' }}>
                     <div className="folder-tab col-3"></div>

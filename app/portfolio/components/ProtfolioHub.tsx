@@ -21,15 +21,19 @@ export default function ProtfolioHubContainer(){
                 <div 
                     className='row w-100 mt-5' 
                     style={{margin : 'auto',  alignItems :'center'}}>
-                        {FOLDER_NAME_ARR.map((name, i) => 
-                            <div className='col-4 col-sm-2' key={name + i}>
-                                <FolderContainer
-                                    folderName={name} 
-                                    index={i} 
-                                />
+                        <div className="col-md-2 col-12">
+                            <div className="row w-100 row-center" style={{margin : 'auto'}}>
+                                {FOLDER_NAME_ARR.map((name, i) => 
+                                    <div className='col-md-12 col-4' key={name + i}>
+                                        <FolderContainer
+                                            folderName={name} 
+                                            index={i} 
+                                        />
+                                    </div>
+                                )}
                             </div>
-                        )}
-                    <div className='col-12'>
+                        </div>
+                    <div className='col-md-10 col-12'>
                         <DetailPromptContainer height={'300px'} />
                     </div>
                 </div>
@@ -45,14 +49,18 @@ export default function ProtfolioHubContainer(){
                 <div 
                     className='row w-100 mt-5' 
                     style={{margin : 'auto',  alignItems :'center'}}>
-                        {FOLDER_NAME_ARR.map((name, i) => 
-                            <div className='col-4 col-sm-2' key={name + i}>
-                                <FolderContainer
-                                    folderName={name} 
-                                    index={i} 
-                                />
+                        <div className="col-md-2 col-12">
+                            <div className="row w-100 row-center" style={{margin : 'auto'}}>
+                                {FOLDER_NAME_ARR.map((name, i) => 
+                                    <div className='col-md-12 col-4' key={name + i}>
+                                        <FolderContainer
+                                            folderName={name} 
+                                            index={i} 
+                                        />
+                                    </div>
+                                )}
                             </div>
-                        )}
+                        </div>
                 </div>
             }
 

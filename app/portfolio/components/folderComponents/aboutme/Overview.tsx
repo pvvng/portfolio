@@ -3,7 +3,10 @@ import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
 
 export default function Overview(){
     return(
-        <div id='AboutMe' className="top-container p-4 bg-dark text-white" style={{ position: 'relative', overflow: 'hidden' }}>
+        <div 
+            id='AboutMe' 
+            className="top-container p-4 pt-5 pb-5 bg-dark text-white top-container" 
+        >
             {/* title */}
             <div className='p-3 animate__animated animate__lightSpeedInRight'>
                 <h2 className='header-title'>dongwoo&apos;s</h2>
