@@ -83,7 +83,7 @@
 .text-tooltip::after {
     content: '';
     position: absolute;
-    bottom: -18px; /* 말풍선 아래에 배치 */
+    bottom: 0px; /* 말풍선 아래에 배치 */
     left: 50%; /* 중앙에 배치 */
     transform: translateX(-50%); /* 중앙 정렬 */
     border-width: 10px; /* 삼각형 크기 조절 */
@@ -120,7 +120,7 @@
 
 /* 윈도우 전체 컨테이너 */
 .window {
-    max-width: 1024px;
+    /* max-width: 1024px; */
     margin : auto;    
     border: 1px solid #ccc;
     border-radius: 8px;

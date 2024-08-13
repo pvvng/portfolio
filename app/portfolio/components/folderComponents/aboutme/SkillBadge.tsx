@@ -36,14 +36,14 @@ const BACKEND_SKILL = [
 
 export default function SkillBadge(){
     return(
-        <div className= "mt-5" style={{margin : 'auto'}}>
-            <h2 className='header-title'>skill & Tools</h2>
+        <div className= "col-6 mt-5" style={{margin : 'auto'}}>
+            <h2 className='header-title text-center'>skill & Tools</h2>
             <hr/>
             <p className="fw-bold">Frontend</p>
             <div className="w-100" style={{margin : 'auto'}}>
                 {
                     FRONTEND_SKILL1.map(sbd => 
-                        <span key={sbd.name} className="badge mb-3" style={{marginRight : '5px', background : 'grey'}}>
+                        <span key={sbd.name} className="badge mb-3">
                             <Image src={sbd.url} width="15" height="15" alt={sbd.name} />
                             {' '}{sbd.name}
                         </span>
@@ -53,7 +53,7 @@ export default function SkillBadge(){
             <div className="w-100" style={{margin : 'auto'}}>
                 {
                     FRONTEND_SKILL2.map(sbd => 
-                        <span key={sbd.name} className="badge mb-3" style={{marginRight : '5px', background : 'grey'}}>
+                        <span key={sbd.name} className="badge mb-3">
                             <Image src={sbd.url} width="15" height="15" alt={sbd.name} />
                             {' '}{sbd.name}
                         </span>
@@ -63,7 +63,7 @@ export default function SkillBadge(){
             <div className="w-100" style={{margin : 'auto'}}>
                 {
                     FRONTEND_SKILL3.map(sbd => 
-                        <span key={sbd.name} className="badge mb-3" style={{marginRight : '5px', background : 'grey'}}>
+                        <span key={sbd.name} className="badge mb-3">
                             <Image src={sbd.url} width="15" height="15" alt={sbd.name} />
                             {' '}{sbd.name}
                         </span>
@@ -74,7 +74,7 @@ export default function SkillBadge(){
             <div className="w-100" style={{margin : 'auto'}}>
                 {
                     BACKEND_SKILL.map(sbd => 
-                        <span key={sbd.name} className="badge  mb-3" style={{marginRight : '5px', background : 'grey'}}>
+                        <span key={sbd.name} className="badge mb-3">
                             <Image src={sbd.url} width="15" height="15" alt={sbd.name} />
                             {' '}{sbd.name}
                         </span>
@@ -85,7 +85,7 @@ export default function SkillBadge(){
             <div className="w-100" style={{margin : 'auto'}}>
                 {
                     COLLABO_SKILL.map(sbd => 
-                        <span key={sbd.name} className="badge mb-3" style={{marginRight : '5px', background : 'grey'}}>
+                        <span key={sbd.name} className="badge mb-3">
                             <Image src={sbd.url} width="15" height="15" alt={sbd.name} />
                             {' '}{sbd.name}
                         </span>
@@ -96,7 +96,7 @@ export default function SkillBadge(){
             <div className="w-100" style={{margin : 'auto'}}>
                 {
                     DEPLOY_SKILLS.map(sbd => 
-                        <span key={sbd.name} className="badge  mb-3" style={{marginRight : '5px', background : 'grey'}}>
+                        <span key={sbd.name} className="badge mb-3">
                             <Image src={sbd.url} width="15" height="15" alt={sbd.name} />
                             {' '}{sbd.name}
                         </span>

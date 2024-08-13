@@ -1,4 +1,38 @@
-export const KKODLE_RM_DATA = {
+export interface DataType {
+    name: string;
+    simple_explain: string;
+    icon: string;
+    github_link: string;
+    velog_link: string;
+    deploy_link: string;
+    manpower: number;
+    term: string;
+    env: {
+        url: string;
+        name: string;
+    }[];
+    manage: {
+        url: string;
+        name: string;
+    }[];
+    library: {
+       name :string;
+       url ?: string;
+    }[];
+    deploy: {
+        name :string;
+        url : string;
+    };
+    explain: {
+        title : string;
+        explain : string;
+    }[];
+    read_me : {
+        url : string;
+    }[];
+}
+
+export const KKODLE_RM_DATA :DataType = {
     name : '꼬들꼬들',
     simple_explain : '단어 유사도 추측 게임',
     icon : '/project/꼬들꼬들/icon.png',
@@ -16,20 +50,18 @@ export const KKODLE_RM_DATA = {
         {url : "/stack/Git.svg", name : 'Git'},
         {url : "/stack/github.png", name : 'Github'},
     ],
-    deploy : {url : "/stack/Netlify-Dark.svg", name : 'Netlify'},
     library : [
-        'tanstack/react-query',
-        'openai',
-        'cosine-similarity',
-        'zustand',
-        'axios',
-        'moment',
-        'next-auth',
-        'next-pwa',
-        'recharts',
-        'react-bootstrap',
-        'fontawesome',
+        {name : 'openAI'},
+        {name : 'cosine-similarity'},
+        {name : 'moment-timezone'},
+        {name : 'next-auth'},
+        {name : 'next-pwa'},
+        {name : 'recharts'},
+        {name : 'zustand', url : '/stack/zustand.png'},
+        {name : 'bootstrap', url : '/stack/bootstrap.svg'},
+        {name : 'fontawesome', url : '/stack/fontawesome.png'},
     ],
+    deploy : {url : "/stack/Netlify-Dark.svg", name : 'Netlify'},
     explain : [
         {
             title : 'open AI의 embedding API로 얻은 단어 유사도로 오늘의 정답을 추측하는 게임입니다.',
@@ -60,7 +92,14 @@ export const KKODLE_RM_DATA = {
             explain : 'PWA를 사용하여 네이티브 앱 처럼 홈 화면에 추가 가능합니다.'
         }
     ],
-
+    read_me : [
+        {url : '/project/꼬들꼬들/icon.png'},
+        {url : '/project/꼬들꼬들/icon.png'},
+        {url : '/project/꼬들꼬들/icon.png'},
+        {url : '/project/꼬들꼬들/icon.png'},
+        {url : '/project/꼬들꼬들/icon.png'},
+        {url : '/project/꼬들꼬들/icon.png'},
+    ]
 }
 
 const PROJECT_NAME_ARR = [

@@ -11,5 +11,5 @@ export default function MainFolderContainer({scrollTop} : {scrollTop : number}){
 
     if(number === 0) return <MainAboutMeContainer scrollTop = {scrollTop} />
     if(number === 1) return <MainProjectContainer />;
-    if(number === 2) return null;
+    if(number === 2) return <><MainAboutMeContainer scrollTop = {scrollTop} /><MainProjectContainer /></>;
 }
