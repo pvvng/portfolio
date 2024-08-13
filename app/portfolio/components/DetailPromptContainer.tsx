@@ -2,48 +2,31 @@
 
 import { useFolderStore, useWindowStore } from "@/app/store";
 import MainFolderContainer from "./folderComponents/MainFolderContainer";
-import { useEffect, useRef, useState } from "react";
 
 export default function DetailPromptContainer({height} : {height ?: string}){
     const { isMinimized, isMaximized, isClosed, minimize, maximize, close } = useWindowStore();
     const { number } = useFolderStore();
-    const [scrollTop, setScrollTop] = useState(0);
-    const contentRef = useRef<HTMLDivElement>(null);
-
-    // 스크롤 이벤트
-    useEffect(() => {
-        const handleScroll = () => {
-            if (contentRef.current) {
-                setScrollTop(contentRef.current.scrollTop);
-            }
-        };
-
-        handleScroll()
-
-        const contentElement = contentRef.current;
-        if (contentElement) {
-            contentElement.addEventListener('scroll', handleScroll);
-        }
-
-        // 이벤트 리스너 클린업
-        return () => {
-            if (contentElement) {
-                contentElement.removeEventListener('scroll', handleScroll);
-            }
-        };
-    }, []);
 
     if (isClosed) return null; // 창이 닫혔을 때 아무것도 렌더링하지 않음
 
     return (
         <div className={`window ${isMinimized ? 'minimized' : ''} ${isMaximized ? 'maximized' : ''}`}>
-            <div className="window-header">
+            <div 
+                className="window-header"
+                onDoubleClick={() => {
+                    if(!isMaximized && isMinimized){
+                        maximize();
+                    }else if(!isMinimized && isMaximized){
+                        minimize();
+                    }
+                }}
+            >
                 <div className="window-buttons">
                     <button className="minimize-button" onClick={minimize}></button>
                     <button className="maximize-button" onClick={maximize}></button>
-                    <button className="close-button " onClick={close}></button>
+                    <button className="close-button" onClick={close}></button>
                 </div>
-                <div className="window-title">
+                <div className="window-title no-select">
                     {
                         number === 0?
                         'About Me':
@@ -53,9 +36,9 @@ export default function DetailPromptContainer({height} : {height ?: string}){
                     }
                 </div>
             </div>
-            <div className="window-content text-black" style={{maxHeight : height}} ref={contentRef}>
+            <div className="window-content text-black" style={{maxHeight : height}}>
                 {/* 창 내용 */}
-                <MainFolderContainer scrollTop = {scrollTop} />
+                <MainFolderContainer />
             </div>
         </div>
     );

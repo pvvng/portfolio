@@ -7,13 +7,13 @@ import AboutMe from './AboutMe';
 import Interview from './Interview';
 import CareerContainer from './CareerContainer';
 
-export default function MainAboutMeContainer({scrollTop} : {scrollTop : number}) {
+export default function MainAboutMeContainer() {
 
     return (
         <>
             <Overview />
             <AboutMe />
-            <Interview scrollTop = {scrollTop} />
+            <Interview />
             <CareerContainer />
         </>
     );

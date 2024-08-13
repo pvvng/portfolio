@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function Interview({scrollTop} : {scrollTop : number}){
+export default function Interview(){
 
     const [inView, setInView] = useState(false);
 

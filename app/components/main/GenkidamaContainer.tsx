@@ -36,10 +36,6 @@ export default function GenkidamaContainer(){
         };
     }, []);
 
-    useEffect(() => {
-        console.log(genkidamaSize, viewPortSize * 0.5)
-    },[genkidamaSize])
-
     if(genkidamaSize === 0 || viewPortSize === 0) return null
 
     return(
@@ -80,7 +76,7 @@ export default function GenkidamaContainer(){
                             opacity : titleFlag ? 1 : 0,
                             visibility : titleFlag ? 'visible' : 'hidden'
                         }}>
-                            <img src="/main/character.png" width="100%" />
+                            <img src="/main/character.png" draggable={false} width="100%" />
                     </div>
                 </div>
             </div>

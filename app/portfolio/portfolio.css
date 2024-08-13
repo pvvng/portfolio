@@ -157,16 +157,19 @@
 /* 닫기 버튼 */
 .close-button {
     background-color: #ff5f56;
+    z-index: 2;
 }
 
 /* 최소화 버튼 */
 .minimize-button {
     background-color: #ffbd2e;
+    z-index: 2;
 }
 
 /* 최대화 버튼 */
 .maximize-button {
     background-color: #27c93f;
+    z-index: 2;
 }
 
 /* 윈도우 제목 */
@@ -177,10 +180,53 @@
     font-weight: bold;
     color: #333;
     transform: translateX(-20px);
+    z-index: 1;
 }
 
 /* 윈도우 내용 컨테이너 */
 .window-content {
     background-color: #fff;
     overflow-y: auto; /* y축 스크롤 허용 */
+}
+
+/* From Uiverse.io by andrew-demchenk0 */ 
+/* copy alert box */
+.info {
+    width: 220px;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    position: absolute;
+}
+  
+.info__icon {
+    transform: translateY(-2px);
+}
+  
+.info__icon path {
+    fill: #fff;
+}
+  
+.info__title {
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-50px); /* 공중으로 50px 떠오르도록 설정 */
+        opacity: 0;
+    }
+}
+
+.float-up {
+    animation: floatUp 3s forwards; /* 애니메이션을 3초간 진행하고 끝에서 멈춤 */
 }

@@ -10,6 +10,13 @@ button{
     font-weight: bold;
 }
 
+img{
+    user-select: none; /* 모든 브라우저에서 텍스트 선택 비활성화 */
+    -webkit-user-select: none; /* Safari와 Chrome을 위한 설정 */
+    -moz-user-select: none; /* Firefox를 위한 설정 */
+    -ms-user-select: none; /* 인터넷 익스플로러를 위한 설정 */
+}
+
 .row-center{
     justify-content: center;
     align-items: center;
@@ -65,4 +72,11 @@ button{
     transform: scale(1.1);
     background-color: white;
     color : black;
+}
+
+.no-select {
+    user-select: none; /* 모든 브라우저에서 텍스트 선택 비활성화 */
+    -webkit-user-select: none; /* Safari와 Chrome을 위한 설정 */
+    -moz-user-select: none; /* Firefox를 위한 설정 */
+    -ms-user-select: none; /* 인터넷 익스플로러를 위한 설정 */
 }

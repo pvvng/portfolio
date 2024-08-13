@@ -5,9 +5,13 @@ import { useEffect, useState } from "react";
 
 export default function ClockContainer(){
 
-    const [currentTime, setCurrentTime] = useState(moment().format('YYYY-MM-DD HH:mm'));
+    const [currentTime, setCurrentTime] = useState('');
 
     useEffect(() => {
+
+        // 클라이언트에서만 초기 시간을 설정
+        setCurrentTime(moment().format('YYYY-MM-DD HH:mm'));
+
         const timer = setInterval(() => {
             let formattedTime = moment().format('YYYY-MM-DD HH:mm');
             if(currentTime !== formattedTime){

@@ -1,10 +1,6 @@
-import { faAddressBook, faCakeCandles, faPerson } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import '../folder.css';
 import SkillBadge from "./SkillBadge";
-import Link from "next/link";
 import Introduce from "./Introuduce";
 
 export default function AboutMe(){
@@ -49,19 +45,20 @@ export default function AboutMe(){
             {/* title */}
             <div className={
                 !inView?
-                '':
-                'animate__animated animate__slideInUp'
+                'p-2':
+                'p-2 animate__animated animate__slideInUp'
                 }
             >
-                <h2 className='header-title text-center mt-5'>about me</h2>
-                <h4 className="header-title text-center mt-3">김동우</h4>
-                <div className="text-center" style={{margin : 'auto'}}>
+                <h2 className='header-title mt-5'>about me</h2>
+                <h4 className="header-title mt-3">김동우</h4>
+                <div style={{margin : 'auto'}}>
                     <span className='badge bg-dark text-white'>#추진력</span>
                     <span className='badge bg-dark text-white'>#메타인지</span>
                     <span className='badge bg-dark text-white'>#열정</span>
+                    <br/>
+                    <span className="badge bg-dark mb-3 mt-2 text-white">Frontend-developer</span>
                 </div>
             </div>
-            <br />
             <Introduce />
             <SkillBadge />
         </div>

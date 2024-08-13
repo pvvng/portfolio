@@ -1,3 +1,5 @@
+
+
 .bg-font{
     font-size: 24px;
     font-weight: bold;
@@ -70,17 +72,19 @@
     background-color: white;
     padding : 20px;
     transition: all 1s;
-    border-radius: 5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
     cursor: pointer;
     min-height: 200px;
     position: relative;
+    transition: all 0.5s;
 }
 
 .project-container:hover{
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 0px;
+    border-radius: 5px;
+    transform: scale(1.05);
 }
 
 .arrow-pre{
@@ -92,7 +96,6 @@
     left: 10px;
     transform: translateY(-50%) rotate(-90deg);
 }
-
 
 .arrow-next{
     background: transparent;
