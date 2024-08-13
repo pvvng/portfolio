@@ -1,12 +1,12 @@
 'use client';
 
-import { useWindowStore } from "@/app/store";
+import { useFolderStore, useWindowStore } from "@/app/store";
 import MainFolderContainer from "./folderComponents/MainFolderContainer";
 import { useEffect, useRef, useState } from "react";
 
 export default function DetailPromptContainer({height} : {height ?: string}){
     const { isMinimized, isMaximized, isClosed, minimize, maximize, close } = useWindowStore();
-
+    const { number } = useFolderStore();
     const [scrollTop, setScrollTop] = useState(0);
     const contentRef = useRef<HTMLDivElement>(null);
 
@@ -43,7 +43,15 @@ export default function DetailPromptContainer({height} : {height ?: string}){
                     <button className="maximize-button" onClick={maximize}></button>
                     <button className="close-button " onClick={close}></button>
                 </div>
-                <div className="window-title">Window Title</div>
+                <div className="window-title">
+                    {
+                        number === 0?
+                        'About Me':
+                        number === 1?
+                        'Project':
+                        'All'
+                    }
+                </div>
             </div>
             <div className="window-content text-black" style={{maxHeight : height}} ref={contentRef}>
                 {/* 창 내용 */}

@@ -65,3 +65,20 @@
     border-radius: 20px;
     background-color: #434343;
 }
+
+.project-container{
+    background-color: white;
+    padding : 20px;
+    transition: all 1s;
+    border-radius: 5px;
+    cursor: pointer;
+    min-height: 200px;
+    position: relative;
+}
+
+.project-container:hover{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 0px;
+}

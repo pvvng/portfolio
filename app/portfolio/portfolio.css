@@ -176,6 +176,7 @@
     font-size: 14px;
     font-weight: bold;
     color: #333;
+    transform: translateX(-20px);
 }
 
 /* 윈도우 내용 컨테이너 */

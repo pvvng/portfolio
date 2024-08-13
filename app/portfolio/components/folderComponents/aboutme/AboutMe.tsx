@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import '../folder.css';
 import SkillBadge from "./SkillBadge";
+import Link from "next/link";
 
 export default function AboutMe(){
 
@@ -77,12 +78,16 @@ export default function AboutMe(){
                     <span className="badge bg-dark mb-3 mt-2">Frontend-developer</span>
                     <br/>                   
                     <button className="p-btn social-icon-btn hover-btn" style={{marginRight : '5px'}}>
-                        <Image src="/stack/github.png" width="30" height="30" alt="github-logo" />
-                        <span className="tooltip-link">Github</span>
+                        <Link href="https://github.com/pvvng?tab=repositories" aria-label="go_to_github" target="_black">
+                            <Image src="/stack/github.png" width="30" height="30" alt="github-logo" />
+                            <span className="tooltip-link">Github</span>
+                        </Link>
                     </button>
                     <button className="p-btn social-icon-btn hover-btn">
-                        <Image src="/stack/velog-icon.webp" width="30" height="30" alt="velog-logo" />
-                        <span className="tooltip-link">Velog</span>
+                        <Link href="https://velog.io/@pvvng/posts" aria-label="go_to_velog" target="_black">
+                            <Image src="/stack/velog-icon.webp" width="30" height="30" alt="velog-logo" />
+                            <span className="tooltip-link">Velog</span>
+                        </Link>
                     </button>
                 </div>
             </div>
