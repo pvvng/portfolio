@@ -47,6 +47,7 @@ export default function FolderContainer(
     return (
         <Draggable 
             nodeRef={nodeRef} 
+            disabled = {true}
             onDrag={(e) => handleStart(e)}
         >
             <div 

@@ -46,6 +46,7 @@ export default function DetailPromptContainer({height} : {height ?: string}){
     return (
         <Draggable 
             nodeRef={nodeRef} 
+            disabled = {true}
             onDrag={(e) => handleStart(e)}
             cancel="scrollable-content"
         >
