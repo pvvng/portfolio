@@ -12,19 +12,30 @@ export default function FolderContainer(
     const { setNumber } = useFolderStore();
     const { isClosed, minimize } = useWindowStore();
     const [isHovered, setIsHovered] = useState(false);
+    const [dragStartPos, setDragStartPos] = useState<{ x: number, y: number } | null>(null);
     const [isDragging, setIsDragging] = useState(false);
 
     const nodeRef = useRef(null);
 
-    const handleStart = () => {
+    const handleStart = (e: any) => {
         setIsDragging(false);
+        setDragStartPos({ x: e.clientX, y: e.clientY });
     };
 
-    const handleDrag = () => {
-        setIsDragging(true);
+    const handleDrag = (e: any) => {
+        if (dragStartPos) {
+            const distance = Math.sqrt(
+                Math.pow(e.clientX - dragStartPos.x, 2) +
+                Math.pow(e.clientY - dragStartPos.y, 2)
+            );
+            if (distance > 5) {
+                setIsDragging(true);
+            }
+        }
     };
 
     const handleStop = () => {
+        setDragStartPos(null);
         setTimeout(() => setIsDragging(false), 0);
     };
 

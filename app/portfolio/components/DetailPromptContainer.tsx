@@ -5,61 +5,77 @@ import MainFolderContainer from "./folderComponents/MainFolderContainer";
 import Draggable from "react-draggable";
 import { useRef, useState } from "react";
 
-export default function DetailPromptContainer({ height }: { height?: string }) {
+export default function DetailPromptContainer({height} : {height ?: string}){
     const { isMinimized, isMaximized, isClosed, minimize, maximize, close } = useWindowStore();
     const { number } = useFolderStore();
     const nodeRef = useRef(null);
+
     const [isDragging, setIsDragging] = useState(false);
+    const [dragStartPos, setDragStartPos] = useState<{ x: number, y: number } | null>(null);
 
-    if (isClosed) return null; // 창이 닫혔을 때 아무것도 렌더링하지 않음
-
-    const handleStart = () => {
+    const handleStart = (e: any) => {
         setIsDragging(false);
+        setDragStartPos({ x: e.clientX, y: e.clientY });
     };
 
-    const handleDrag = () => {
-        setIsDragging(true);
-    };
-
-    const handleStop = () => {
-        setTimeout(() => setIsDragging(false), 0); // 드래그 종료 후 상태 초기화
-    };
-
-    const handleDoubleClick = () => {
-        if (!isDragging) {
-            if (!isMaximized && isMinimized) {
-                maximize();
-            } else if (!isMinimized && isMaximized) {
-                minimize();
+    const handleDrag = (e: any) => {
+        if (dragStartPos) {
+            const distance = Math.sqrt(
+                Math.pow(e.clientX - dragStartPos.x, 2) +
+                Math.pow(e.clientY - dragStartPos.y, 2)
+            );
+            if (distance > 5) {
+                setIsDragging(true);
             }
         }
     };
 
+    const handleStop = () => {
+        setDragStartPos(null);
+        setTimeout(() => setIsDragging(false), 0);
+    };
+
+    if (isClosed) return null; // 창이 닫혔을 때 아무것도 렌더링하지 않음
+
     return (
-        <Draggable
-            nodeRef={nodeRef}
+        <Draggable 
+            nodeRef={nodeRef} 
             onStart={handleStart}
             onDrag={handleDrag}
             onStop={handleStop}
+            cancel="scrollable-content"
         >
-            <div
-                ref={nodeRef}
-                className={`window ${isMinimized ? 'minimized' : ''} ${isMaximized ? 'maximized' : ''}`}
-            >
+            <div 
+                ref={nodeRef} 
+                className={
+                `window ${isMinimized ? 'minimized' : ''} ${isMaximized ? 'maximized' : ''}`
+                }>
                 <div 
                     className="window-header"
-                    onDoubleClick={handleDoubleClick}
+                    onDoubleClick={() => {
+                        if(!isMaximized && isMinimized){
+                            maximize();
+                        }else if(!isMinimized && isMaximized){
+                            minimize();
+                        }
+                    }}
                 >
                     <div className="window-buttons">
-                        <button className="minimize-button" onClick={() => !isDragging && minimize()}></button>
-                        <button className="maximize-button" onClick={() => !isDragging && maximize()}></button>
-                        <button className="close-button" onClick={() => !isDragging && close()}></button>
+                        <button className="minimize-button" onClick={minimize}></button>
+                        <button className="maximize-button" onClick={maximize}></button>
+                        <button className="close-button" onClick={close}></button>
                     </div>
                     <div className="window-title no-select">
-                        {number === 0 ? 'About Me' : number === 1 ? 'Project' : 'All'}
+                        {
+                            number === 0?
+                            'About Me':
+                            number === 1?
+                            'Project':
+                            'All'
+                        }
                     </div>
                 </div>
-                <div className="window-content text-black" style={{ maxHeight: height }}>
+                <div className="window-content text-black scrollable-content" style={{maxHeight : height}}>
                     {/* 창 내용 */}
                     <MainFolderContainer />
                 </div>
