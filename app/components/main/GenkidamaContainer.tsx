@@ -42,7 +42,7 @@ export default function GenkidamaContainer(){
         <div className="p-2" style={{margin :'auto'}}>
             {
                 !titleFlag ?
-                <p className="text-center fw-bold">원기옥을 클릭해 오공을 도와주세요!</p>:
+                <h5 className="text-center fw-bold">원기옥을 클릭해 오공을 도와주세요!</h5>:
                 <ExplainCotainer />
             }
             <div 

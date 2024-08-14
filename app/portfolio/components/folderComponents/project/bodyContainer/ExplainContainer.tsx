@@ -19,7 +19,7 @@ export default function ExplainContainer({projectData} : {projectData : DataType
                 projectData.about &&
                 <>
                     <hr />
-                    <h4 className="fw-bold">프로젝트에서 알게된 점</h4>
+                    <h5 className="header-title mb-3">프로젝트에서 알게된 점</h5>
                 </>
             }
             <ul>
@@ -31,7 +31,7 @@ export default function ExplainContainer({projectData} : {projectData : DataType
 
             <hr />
 
-            <h4 className="fw-bold">후기</h4>
+            <h5 className="header-title mb-3">후기</h5>
             {
                 <div className="p-3 rounded-2" style={{background : '#eee'}}>
                     <strong>{projectData.review}</strong>

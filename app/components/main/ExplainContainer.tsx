@@ -10,8 +10,8 @@ export default function ExplainCotainer(){
     return(
         <div className='mt-5 mt-sm-4 mt-md-3 mt-lg-0'>
             <div className="text-center fw-bold p-4">
-                <p className="m-0 main-title">안녕하세요!</p>
-                <p className="m-0 mb-4 sub-title">프론트엔드 개발자 김동우입니다.</p>
+                <h5 className="m-0 main-title">안녕하세요!</h5>
+                <h6 className="m-0 mb-4 sub-title">프론트엔드 개발자 김동우입니다.</h6>
                 <button 
                     className="p-btn btn-white ani-btn" 
                     onClick={() => {router.push('/portfolio')}}
