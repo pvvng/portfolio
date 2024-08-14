@@ -2,6 +2,7 @@
 
 import { useFolderStore, useWindowStore } from "@/app/store";
 import MainFolderContainer from "./folderComponents/MainFolderContainer";
+import { Rnd } from "react-rnd";
 
 export default function DetailPromptContainer({height} : {height ?: string}){
     const { isMinimized, isMaximized, isClosed, minimize, maximize, close } = useWindowStore();

@@ -1,6 +1,7 @@
 .folder-container{
     width : 80px;
     text-align: center;
+    z-index: 1000;
 }
 
 .folder {
@@ -120,13 +121,13 @@
 
 /* 윈도우 전체 컨테이너 */
 .window {
-    /* max-width: 1024px; */
     margin : auto;    
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
+    z-index: 2000;
 }
 
 /* 윈도우 헤더 (상단 바) */

@@ -2,6 +2,7 @@
 
 import { useFolderStore, useWindowStore } from '@/app/store';
 import { useState } from 'react';
+import { Rnd } from 'react-rnd';
 
 export default function FolderContainer(
     {folderName, index} : 

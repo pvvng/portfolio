@@ -36,7 +36,7 @@ export default function MainProjectContainer(){
     };
 
     return(
-        <div className="p-3 pb-4 bg-dark">
+        <div className="p-3 pb-4 bg-dark" style={{overflow : 'hidden'}}>
             <h2 className="header-title text-white p-3 animate__animated animate__flipInX" ref={headerRef}>Project</h2>
             {/* hidden detail prompt */}
             {

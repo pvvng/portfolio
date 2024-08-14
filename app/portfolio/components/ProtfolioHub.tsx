@@ -14,7 +14,7 @@ export default function ProtfolioHubContainer(){
     return(
         <div 
             className='w-100 bg-genkidama p-2' 
-            style={{minHeight : '100vh', position : 'relative'}}
+            style={{minHeight : '100vh', position : 'relative', overflow : 'hidden'}}
         >
             {
                 isMinimized &&
