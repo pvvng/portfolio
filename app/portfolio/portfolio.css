@@ -201,10 +201,17 @@
     justify-content: center;
     border-radius: 8px;
     position: absolute;
+    @media screen and (max-width : 340px) {
+        width: 160px;
+        padding : 5px;
+    }
 }
   
 .info__icon {
     transform: translateY(-2px);
+    @media screen and (max-width : 340px) {
+        width: 10%;
+    }
 }
   
 .info__icon path {
@@ -215,6 +222,9 @@
     font-weight: 500;
     font-size: 14px;
     color: #fff;
+    @media screen and (max-width : 340px) {
+        font-size: 10px;
+    }
 }
 
 @keyframes floatUp {

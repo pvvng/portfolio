@@ -1,7 +1,7 @@
 'use client';
 
 import { useFolderStore, useWindowStore } from '@/app/store';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Draggable, { DraggableEvent } from 'react-draggable';
 import { useLongPress } from 'use-long-press';
 

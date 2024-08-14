@@ -3,7 +3,7 @@
 import { useFolderStore, useWindowStore } from "@/app/store";
 import MainFolderContainer from "./folderComponents/MainFolderContainer";
 import Draggable, { DraggableEvent } from "react-draggable";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLongPress } from 'use-long-press';
 
 export default function DetailPromptContainer({height} : {height ?: string}){
@@ -11,6 +11,16 @@ export default function DetailPromptContainer({height} : {height ?: string}){
     const { number } = useFolderStore();
     const nodeRef = useRef(null);
     const [isLongPressed, setIsLongPressed] = useState(false);
+
+    const [isDraggable, setIsDraggable] = useState(false);
+
+    const handleTouchStart = () => {
+        setIsDraggable(true); // 터치 시 드래그 활성화
+    };
+
+    const handleTouchEnd = () => {
+        setIsDraggable(false); // 터치 종료 시 드래그 비활성화
+    };
 
     // 길게 누르기 핸들러
     const longPressHandler = () => {
@@ -41,56 +51,63 @@ export default function DetailPromptContainer({height} : {height ?: string}){
         }
     };
 
+    // useEffect(() => {console.log(isDraggable)},[isDraggable])
+
     if (isClosed) return null; // 창이 닫혔을 때 아무것도 렌더링하지 않음
 
     return (
-        <Draggable 
-            nodeRef={nodeRef} 
-            disabled = {true}
-            onDrag={(e) => handleStart(e)}
-            cancel="scrollable-content"
+        <div
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
         >
-            <div 
-                ref={nodeRef} 
-                className={
-                    `window ${isMinimized ? 'minimized' : ''} ${isMaximized ? 'maximized' : ''}`
-                }
-                style={{
-                    // 드래그 가능 상태에 따라 커서 변경
-                    cursor: isLongPressed ? 'move' : 'grab',
-                }}
-                {...bind()}
+            <Draggable 
+                nodeRef={nodeRef} 
+                disabled={!isDraggable}
+                onDrag={(e) => handleStart(e)}
+                cancel="scrollable-content"
             >
                 <div 
-                    className="window-header"
-                    onDoubleClick={() => {
-                        if(!isMaximized && isMinimized){
-                            maximize();
-                        }else if(!isMinimized && isMaximized){
-                            minimize();
-                        }
+                    ref={nodeRef} 
+                    className={
+                        `window ${isMinimized ? 'minimized' : ''} ${isMaximized ? 'maximized' : ''}`
+                    }
+                    style={{
+                        // 드래그 가능 상태에 따라 커서 변경
+                        cursor: isLongPressed ? 'move' : 'grab',
                     }}
+                    {...bind()}
                 >
-                    <div className="window-buttons">
-                        <button className="minimize-button" onClick={minimize}></button>
-                        <button className="maximize-button" onClick={maximize}></button>
-                        <button className="close-button" onClick={close}></button>
+                    <div 
+                        className="window-header"
+                        onDoubleClick={() => {
+                            if(!isMaximized && isMinimized){
+                                maximize();
+                            }else if(!isMinimized && isMaximized){
+                                minimize();
+                            }
+                        }}
+                    >
+                        <div className="window-buttons">
+                            <button className="minimize-button" onClick={minimize}></button>
+                            <button className="maximize-button" onClick={maximize}></button>
+                            <button className="close-button" onClick={close}></button>
+                        </div>
+                        <div className="window-title no-select">
+                            {
+                                number === 0?
+                                'About Me':
+                                number === 1?
+                                'Project':
+                                'All'
+                            }
+                        </div>
                     </div>
-                    <div className="window-title no-select">
-                        {
-                            number === 0?
-                            'About Me':
-                            number === 1?
-                            'Project':
-                            'All'
-                        }
+                    <div className="window-content text-black scrollable-content" style={{maxHeight : height}}>
+                        {/* 창 내용 */}
+                        <MainFolderContainer />
                     </div>
                 </div>
-                <div className="window-content text-black scrollable-content" style={{maxHeight : height}}>
-                    {/* 창 내용 */}
-                    <MainFolderContainer />
-                </div>
-            </div>
-        </Draggable>
+            </Draggable>
+        </div>
     );
 }
