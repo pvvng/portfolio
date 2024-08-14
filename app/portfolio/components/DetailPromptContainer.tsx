@@ -11,16 +11,14 @@ export default function DetailPromptContainer({height} : {height ?: string}){
     const { number } = useFolderStore();
     const nodeRef = useRef(null);
     const [isLongPressed, setIsLongPressed] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-    const [isDraggable, setIsDraggable] = useState(false);
+    useEffect(() => {
+        // 터치 디바이스인지 확인하는 함수
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    const handleTouchStart = () => {
-        setIsDraggable(true); // 터치 시 드래그 활성화
-    };
-
-    const handleTouchEnd = () => {
-        setIsDraggable(false); // 터치 종료 시 드래그 비활성화
-    };
+        setIsTouchDevice(isTouchDevice);
+    }, []);
 
     // 길게 누르기 핸들러
     const longPressHandler = () => {
@@ -51,63 +49,59 @@ export default function DetailPromptContainer({height} : {height ?: string}){
         }
     };
 
-    // useEffect(() => {console.log(isDraggable)},[isDraggable])
+    useEffect(() => {console.log(isTouchDevice)},[isTouchDevice])
 
     if (isClosed) return null; // 창이 닫혔을 때 아무것도 렌더링하지 않음
 
     return (
-        <div
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
+        <Draggable 
+            nodeRef={nodeRef} 
+            disabled = {isTouchDevice}
+            onDrag={(e) => handleStart(e)}
+            cancel="scrollable-content"
         >
-            <Draggable 
-                nodeRef={nodeRef} 
-                disabled={!isDraggable}
-                onDrag={(e) => handleStart(e)}
-                cancel="scrollable-content"
+            <div 
+                ref={nodeRef} 
+                className={
+                    `window ${isMinimized ? 'minimized' : ''} ${isMaximized ? 'maximized' : ''}`
+                }
+                style={{
+                    // 드래그 가능 상태에 따라 커서 변경
+                    cursor: isLongPressed ? 'move' : 'grab',
+                }}
+                {...bind()}
             >
                 <div 
-                    ref={nodeRef} 
-                    className={
-                        `window ${isMinimized ? 'minimized' : ''} ${isMaximized ? 'maximized' : ''}`
-                    }
-                    style={{
-                        // 드래그 가능 상태에 따라 커서 변경
-                        cursor: isLongPressed ? 'move' : 'grab',
+                    className="window-header"
+                    onDoubleClick={() => {
+                        if(!isMaximized && isMinimized){
+                            maximize();
+                        }else if(!isMinimized && isMaximized){
+                            minimize();
+                        }
                     }}
-                    {...bind()}
                 >
-                    <div 
-                        className="window-header"
-                        onDoubleClick={() => {
-                            if(!isMaximized && isMinimized){
-                                maximize();
-                            }else if(!isMinimized && isMaximized){
-                                minimize();
-                            }
-                        }}
-                    >
-                        <div className="window-buttons">
-                            <button className="minimize-button" onClick={minimize}></button>
-                            <button className="maximize-button" onClick={maximize}></button>
-                            <button className="close-button" onClick={close}></button>
-                        </div>
-                        <div className="window-title no-select">
-                            {
-                                number === 0?
-                                'About Me':
-                                number === 1?
-                                'Project':
-                                'All'
-                            }
-                        </div>
+                    <div className="window-buttons">
+                        <button className="minimize-button" onClick={minimize}></button>
+                        <button className="maximize-button" onClick={maximize}></button>
+                        <button className="close-button" onClick={close}></button>
                     </div>
-                    <div className="window-content text-black scrollable-content" style={{maxHeight : height}}>
-                        {/* 창 내용 */}
-                        <MainFolderContainer />
+                    <div className="window-title no-select">
+                        {
+                            number === 0?
+                            'About Me':
+                            number === 1?
+                            'Project':
+                            'All'
+                        }/
+                        {isTouchDevice.toString()}
                     </div>
                 </div>
-            </Draggable>
-        </div>
+                <div className="window-content text-black scrollable-content" style={{maxHeight : height}}>
+                    {/* 창 내용 */}
+                    <MainFolderContainer />
+                </div>
+            </div>
+        </Draggable>
     );
 }

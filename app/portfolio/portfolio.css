@@ -193,25 +193,17 @@
 /* From Uiverse.io by andrew-demchenk0 */ 
 /* copy alert box */
 .info {
-    width: 220px;
-    padding: 12px;
+    padding: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
     position: absolute;
-    @media screen and (max-width : 340px) {
-        width: 160px;
-        padding : 5px;
-    }
 }
   
 .info__icon {
     transform: translateY(-2px);
-    @media screen and (max-width : 340px) {
-        width: 10%;
-    }
 }
   
 .info__icon path {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useFolderStore, useWindowStore } from '@/app/store';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Draggable, { DraggableEvent } from 'react-draggable';
 import { useLongPress } from 'use-long-press';
 
@@ -14,6 +14,14 @@ export default function FolderContainer(
 
     const nodeRef = useRef(null);
     const [isLongPressed, setIsLongPressed] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    useEffect(() => {
+        // 터치 디바이스인지 확인하는 함수
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        setIsTouchDevice(isTouchDevice);
+    }, []);
 
     // 길게 누르기 핸들러
     const longPressHandler = () => {
@@ -47,7 +55,7 @@ export default function FolderContainer(
     return (
         <Draggable 
             nodeRef={nodeRef} 
-            disabled = {true}
+            disabled = {isTouchDevice}
             onDrag={(e) => handleStart(e)}
         >
             <div 
