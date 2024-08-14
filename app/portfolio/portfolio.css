@@ -193,11 +193,8 @@
 /* From Uiverse.io by andrew-demchenk0 */ 
 /* copy alert box */
 .info {
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    max-width: 240px;
+    padding: 8px;
     border-radius: 8px;
     position: absolute;
 }

@@ -37,11 +37,15 @@ export default function AboutMe(){
 
     return(
         // overview
-        <div className={
-            !inView?
-            'about-me-container top-container p-3':
-            'about-me-container bg-white top-container p-3'
-        } ref={targetRef}>
+        <div 
+            className={
+                !inView?
+                'about-me-container top-container p-3':
+                'about-me-container bg-white top-container p-3'
+            } 
+            style={{overflow : 'hidden'}}
+            ref={targetRef}
+        >
             {/* title */}
             <div className={
                 !inView?

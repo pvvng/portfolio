@@ -23,40 +23,40 @@ export default function FolderContainer(
         setIsTouchDevice(isTouchDevice);
     }, []);
 
-    // 길게 누르기 핸들러
-    const longPressHandler = () => {
-        setIsLongPressed(true);
-    };
+    // // 길게 누르기 핸들러
+    // const longPressHandler = () => {
+    //     setIsLongPressed(true);
+    // };
 
-    // 길게 누르기 훅 사용
-    const bind = useLongPress(longPressHandler, {
-        // 1000ms = 1초
-        threshold: 1000, 
-        onCancel : () => {
-            // 길게 누르기가 취소되었을 때
-            setIsLongPressed(false);
-        },
-        onFinish : () => {
-            // 길게 누르기가 끝났을 때
-            setIsLongPressed(false);
-        }
-    });
+    // // 길게 누르기 훅 사용
+    // const bind = useLongPress(longPressHandler, {
+    //     // 1000ms = 1초
+    //     threshold: 1000, 
+    //     onCancel : () => {
+    //         // 길게 누르기가 취소되었을 때
+    //         setIsLongPressed(false);
+    //     },
+    //     onFinish : () => {
+    //         // 길게 누르기가 끝났을 때
+    //         setIsLongPressed(false);
+    //     }
+    // });
 
-    // 드래그 시작을 조건적으로 허용
-    const handleStart = (e :DraggableEvent) => {
-        if (!isLongPressed) {
-            // 드래그 시작을 방지
-            e.preventDefault(); 
-            // 이 부분이 중요: 드래그를 막기 위해 false를 반환
-            return false; 
-        }
-    };
+    // // 드래그 시작을 조건적으로 허용
+    // const handleStart = (e :DraggableEvent) => {
+    //     if (!isLongPressed) {
+    //         // 드래그 시작을 방지
+    //         e.preventDefault(); 
+    //         // 이 부분이 중요: 드래그를 막기 위해 false를 반환
+    //         return false; 
+    //     }
+    // };
 
     return (
         <Draggable 
             nodeRef={nodeRef} 
             disabled = {isTouchDevice}
-            onDrag={(e) => handleStart(e)}
+            // onDrag={(e) => handleStart(e)}
         >
             <div 
                 ref={nodeRef} 
@@ -68,7 +68,7 @@ export default function FolderContainer(
                     // 드래그 가능 상태에 따라 커서 변경
                     cursor: isLongPressed ? 'move' : 'grab',
                 }}
-                {...bind()}
+                // {...bind()}
             >
                 <div 
                     className='folder-container' 

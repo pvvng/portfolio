@@ -8,6 +8,8 @@ export default function HeaderContainer({projectData} : {projectData : DataType}
 
     return(
         <>
+            <h2 className="header-title">{projectData.name}</h2>
+            <p className="m-0">{projectData.simple_explain}</p>
             <div id="button-container" className="float-end">
                 {
                     projectData.deploy_link&&
@@ -34,10 +36,6 @@ export default function HeaderContainer({projectData} : {projectData : DataType}
                     </button>
                 }
             </div>
-
-            <h2 className="header-title">{projectData.name}</h2>
-            <p className="m-0">{projectData.simple_explain}</p>
-
             <div style={{clear : 'both'}}></div>
         </>
     )
