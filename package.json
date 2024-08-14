@@ -19,7 +19,7 @@
     "react": "^18",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18",
-    "react-rnd": "^10.4.12",
+    "react-draggable": "^4.4.6",
     "zustand": "^4.5.4"
   },
   "devDependencies": {
