@@ -4,12 +4,33 @@ import { useWindowStore } from "@/app/store";
 import DetailPromptContainer from "./DetailPromptContainer";
 import FolderContainer from "./FolderContainer";
 import TaskBar from "./TaskBar";
+import { useEffect, useState } from "react";
 
 const FOLDER_NAME_ARR = ['About Me','Project', 'All'];
 
 export default function ProtfolioHubContainer(){
 
     const { isMinimized, isMaximized, isClosed } = useWindowStore();
+    const [viewPortHeight, setViewPortHeight] = useState(0);
+
+    const updateViewportHeight = () => {
+        const baseHeight = window.innerHeight - 220;
+        const additionalHeight = window.innerWidth <= 768 ? 120 : 0;
+        setViewPortHeight(baseHeight - additionalHeight);
+    };
+
+    useEffect(() => {
+        // 초기 viewportHeight 설정
+        updateViewportHeight();
+
+        // resize 이벤트 리스너 등록
+        window.addEventListener('resize', updateViewportHeight);
+
+        // 컴포넌트 언마운트 시 resize 이벤트 리스너 제거
+        return () => {
+            window.removeEventListener('resize', updateViewportHeight);
+        };
+    }, []);
 
     return(
         <div 
@@ -34,7 +55,7 @@ export default function ProtfolioHubContainer(){
                             </div>
                         </div>
                     <div className='col-md-10 col-12'>
-                        <DetailPromptContainer height={'300px'} />
+                        <DetailPromptContainer height={`${viewPortHeight}px`} />
                     </div>
                 </div>
             }

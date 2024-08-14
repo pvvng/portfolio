@@ -35,7 +35,7 @@ interface FolderStoreType {
 }
 
 export const useFolderStore = create<FolderStoreType>((set) => ({
-  number: 0,  // 초기값은 0
+  number: 2,  // 초기값은 2 (all)
   setNumber: (value: number) => set({ number: value }),
 }));
 

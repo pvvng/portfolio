@@ -5,6 +5,7 @@ import MainFolderContainer from "./folderComponents/MainFolderContainer";
 import Draggable, { DraggableEvent } from "react-draggable";
 import { useEffect, useRef, useState } from "react";
 import { useLongPress } from 'use-long-press';
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function DetailPromptContainer({height} : {height ?: string}){
     const { isMinimized, isMaximized, isClosed, minimize, maximize, close } = useWindowStore();
@@ -80,9 +81,9 @@ export default function DetailPromptContainer({height} : {height ?: string}){
                     }}
                 >
                     <div className="window-buttons">
+                        <button className="close-button" onClick={close}></button>
                         <button className="minimize-button" onClick={minimize}></button>
                         <button className="maximize-button" onClick={maximize}></button>
-                        <button className="close-button" onClick={close}></button>
                     </div>
                     <div className="window-title no-select">
                         {
@@ -94,10 +95,15 @@ export default function DetailPromptContainer({height} : {height ?: string}){
                         }
                     </div>
                 </div>
-                <div className="window-content text-black scrollable-content" style={{maxHeight : height}}>
-                    {/* 창 내용 */}
-                    <MainFolderContainer />
-                </div>
+                {
+                    height === '0px' ? 
+                    <div className="bg-dark p-4 row row-center" style={{margin : 'auto', height : '400px'}}>
+                        <LoadingSpinner />
+                    </div>:
+                    <div className="window-content text-black scrollable-content" style={{maxHeight : height}}>
+                        <MainFolderContainer />
+                    </div>
+                }
             </div>
         </Draggable>
     );
