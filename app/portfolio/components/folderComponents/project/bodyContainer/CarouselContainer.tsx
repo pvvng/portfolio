@@ -64,7 +64,7 @@ export default function CarouselContainer({projectData, index} : {projectData : 
         if (inView && !isClicked) {
             interval = setInterval(() => {
                 handleCarousel('n', false);
-            }, 10000);
+            }, 5000);
         }
     
         return () => {

@@ -230,3 +230,27 @@
 .float-up {
     animation: floatUp 3s forwards; /* 애니메이션을 3초간 진행하고 끝에서 멈춤 */
 }
+
+.thanks-title{
+    color : rgb(157, 157, 157);
+    font-size: 64px;
+
+    @media screen and (max-width:470px) {
+        font-size: 48px;
+    }
+    @media screen and (max-width:340px) {
+        font-size: 32px;
+    }
+}
+
+.thanks-sub-title{
+    transform: translateY(-30px);
+    @media screen and (max-width:470px) {
+        font-size: 16px;
+        transform: translateY(-25px);
+    }
+    @media screen and (max-width:340px) {
+        font-size: 16px;
+        transform: translateY(-15px);
+    }
+}

@@ -30,6 +30,10 @@ img{
     transition: all 0.6s;
 }
 
+.c-genkidama{
+    color: rgba(0, 153, 255, 1);
+}
+
 .bg-genkidama{
     color: white;
     background: rgba(0, 153, 255, 1);
