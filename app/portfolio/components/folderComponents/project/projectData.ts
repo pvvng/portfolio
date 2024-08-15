@@ -23,6 +23,9 @@ export interface DataType {
         name :string;
         url : string;
     };
+    light_explain ?: {
+        title : string;
+    }[]
     explain: {
         title : string;
         explain ?: string;
@@ -65,11 +68,7 @@ export const KKODLE_RM_DATA :DataType = {
         {name : 'fontawesome', url : '/stack/fontawesome.png'},
     ],
     deploy : {url : "/stack/Netlify-Dark.svg", name : 'Netlify'},
-    explain : [
-        {
-            title : 'open AI의 embedding API로 얻은 단어 유사도로 오늘의 정답을 추측하는 게임입니다.',
-            explain : '꼬맨틀에서 영감을 받아 제작되었습니다. 기본적인 레이아웃은 꼬맨틀을 참고하였습니다.'
-        },
+    light_explain: [
         {
             title : 'TypeScript로 타입 에러 제어',
         },
@@ -91,6 +90,12 @@ export const KKODLE_RM_DATA :DataType = {
         {
             title : 'Git Flow 전략을 활용하여 관리한 프로젝트'
         }
+    ],
+    explain : [
+        {
+            title : 'open AI의 embedding API로 얻은 단어 유사도로 오늘의 정답을 추측하는 게임입니다.',
+            explain : '꼬맨틀에서 영감을 받아 제작되었습니다. 기본적인 레이아웃은 꼬맨틀을 참고하였습니다.'
+        },
     ],
     read_me : [
         {url : '/project/꼬들꼬들/icon.png'},
@@ -142,11 +147,7 @@ export const STORIFY_RM_DATA :DataType = {
         {name : 'fontawesome', url : '/stack/fontawesome.png'},
     ],
     deploy : {url : "/stack/Netlify-Dark.svg", name : 'Netlify'},
-    explain : [
-        {
-            title : '게임 "메이플스토리"의 BGM/OST 웹 플레이어입니다.',
-            explain : '여가 시간 중 어릴적 즐겨하던 게임인 메이플스토리의 BGM 모음집을 듣다가 제작한 음원 웹 플레이어입니다. 메인페이지 레이아웃은 github dashboard를 참고하였고, 앨범 페이지와 음원 재생 페이지의 레이아웃은 Spotify를 참고하였습니다.'
-        },
+    light_explain : [
         {
             title : 'TypeScript로 타입 에러 제어',
         },
@@ -171,6 +172,12 @@ export const STORIFY_RM_DATA :DataType = {
         {
             title : 'Git Flow 전략을 활용하여 관리한 프로젝트'
         }
+    ],
+    explain : [
+        {
+            title : '게임 "메이플스토리"의 BGM/OST 웹 플레이어입니다.',
+            explain : '여가 시간 중 어릴적 즐겨하던 게임인 메이플스토리의 BGM 모음집을 듣다가 제작한 음원 웹 플레이어입니다. 메인페이지 레이아웃은 github dashboard를 참고하였고, 앨범 페이지와 음원 재생 페이지의 레이아웃은 Spotify를 참고하였습니다.'
+        },
     ],
     read_me : [
         {url : '/project/storify/icon.png'},
@@ -212,17 +219,19 @@ export const POKEMON_RM_DATA :DataType = {
         {name : 'fontawesome', url : '/stack/fontawesome.png'},
     ],
     deploy : {url : "/stack/vercel.svg", name : 'Vercel'},
-    explain : [
-        {
-            title : 'Next.js로 제작한 가볍게 즐길 수 있는 포켓몬스터 미니 팬게임입니다.',
-            explain : '구글링 중 포켓몬의 데이터를 받을 수 있는 API가 있다는 사실을 알게되었습니다. 이를 활용해 만든 포켓몬 웹 미니게임입니다. 포켓몬스터의 핵심 기능은 포켓몬을 몬스터로 포획하는 기능이라고 생각하기에 위 기능을 구현하는 것을 핵심 목표로 잡았습니다.'
-        },
+    light_explain: [
         {
             title : 'PWA 기술을 활용하여 앱처럼 사용 가능한 웹앱',
         },
         {
             title : 'Git Flow 전략을 활용하여 관리한 프로젝트'
         }
+    ],
+    explain : [
+        {
+            title : 'Next.js로 제작한 가볍게 즐길 수 있는 포켓몬스터 미니 팬게임입니다.',
+            explain : '구글링 중 포켓몬의 데이터를 받을 수 있는 API가 있다는 사실을 알게되었습니다. 이를 활용해 만든 포켓몬 웹 미니게임입니다. 포켓몬스터의 핵심 기능은 포켓몬을 몬스터로 포획하는 기능이라고 생각하기에 위 기능을 구현하는 것을 핵심 목표로 잡았습니다.'
+        },
     ],
     read_me : [
         {url : '/project/pokemon/icon.png'},
@@ -264,6 +273,14 @@ export const MAP_RM_DATA :DataType = {
         {name : 'fontawesome', url : '/stack/fontawesome.png'},
     ],
     deploy : {url : "/stack/vercel.svg", name : 'Vercel'},
+    light_explain : [
+        {
+            title : 'PWA 기술을 활용하여 앱처럼 사용 가능한 웹앱',
+        },
+        {
+            title : 'Git Flow 전략을 활용하여 관리한 프로젝트.'
+        }
+    ],
     explain : [
         {
             title : 'React.js와 Kakao map API를 활용하여 제작한 실시간 위치 추적 지도 앱입니다.',
@@ -277,12 +294,6 @@ export const MAP_RM_DATA :DataType = {
             title : '서버리스 웹 사이트',
             explain : '프론트엔드만으로 구현된 웹사이트입니다. localstorage 기능을 활용하여 사용자가 저장하고자 하는 이동 경로를 반영구적으로 저장 가능합니다. 저장한 이동 경로는 메인 페이지에서 버튼을 클릭하여 확인 가능합니다.'
         },
-        {
-            title : 'PWA 기술을 활용하여 앱처럼 사용 가능한 웹앱',
-        },
-        {
-            title : 'Git Flow 전략을 활용하여 관리한 프로젝트.'
-        }
     ],
     read_me : [
         {url : '/project/map/icon.png'},

@@ -3,12 +3,13 @@
 import Image from "next/image"
 import ClockContainer from "./ClockContainer"
 import Link from "next/link"
+import NoteContainer from "./NoteContainer"
 
 export default function TaskBar(){
     return(
         <div className='taskbar'>
             <div 
-                className='row w-100' 
+                className='row row-center w-100' 
                 style={{
                     margin :'auto', 
                     justifyContent : 'center', 
@@ -27,7 +28,6 @@ export default function TaskBar(){
                         </Link>
                     </button>
                 </div> 
-
                 <div className='col-6 text-center'>
                     <ClockContainer />
                 </div>

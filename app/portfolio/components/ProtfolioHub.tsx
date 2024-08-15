@@ -5,6 +5,7 @@ import DetailPromptContainer from "./DetailPromptContainer";
 import FolderContainer from "./FolderContainer";
 import TaskBar from "./TaskBar";
 import { useEffect, useState } from "react";
+import NoteContainer, { NotePageContainer } from "./NoteContainer";
 
 const FOLDER_NAME_ARR = ['About Me','Project', 'All'];
 
@@ -37,6 +38,7 @@ export default function ProtfolioHubContainer(){
             className='w-100 bg-genkidama p-2' 
             style={{minHeight : '100vh', position : 'relative', overflow : 'hidden'}}
         >
+            <NoteContainer />
             {
                 isMinimized &&
                 <div 
