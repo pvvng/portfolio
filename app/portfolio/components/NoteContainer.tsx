@@ -73,7 +73,10 @@ function NoteContentContainer(){
                                 <button className="close-button" style={{width : 16, height : 16, borderRadius : '50%'}}></button>
                                 <span className="note-font"  style={{fontSize : 18}}>&nbsp;{nc.split(' ')[1]}</span>
                             </>:
-                            <p className="m-0 note-font" style={{fontSize : 18}}>{nc}</p>
+                            <p 
+                                className="m-0 note-font" 
+                                style={{fontSize : 18}}
+                            >{nc}</p>
                         }
                         {
                             i < NOTE_CONTENT.length - 1 &&
@@ -87,11 +90,11 @@ function NoteContentContainer(){
 }
 
 const NOTE_CONTENT = [
-    '폴더를 더블클릭하여 폴더의 내용을 확인할 수 있어요.',
-    '윈도우 창의 헤더를 더블클릭하면 윈도우 창의 크기를 늘리거나 줄일 수 있어요.',
-    '윈도우 좌측 상단의 버튼을 클릭하여 윈도우 창의 크기를 늘어거나 줄이고, 끌 수 있어요.',
+    '1. 폴더를 더블클릭하여 폴더의 내용을 확인할 수 있어요.',
+    '2. 윈도우 창의 헤더를 더블클릭하면 윈도우 창의 크기를 늘리거나 줄일 수 있어요.',
+    '3. 윈도우 좌측 상단의 버튼을 클릭하여 윈도우 창의 크기를 늘어거나 줄이고, 끌 수 있어요.',
     'G 크기 키우기',
     'Y 크기 줄이기', 
     'R 닫기',
-    '데스크탑으로 웹페이지를 확인하면 윈도우 창, 폴더를 이동시킬 수 있어요.',
+    '4. 데스크탑으로 웹페이지를 방문하면 윈도우 창, 폴더를 이동시킬 수 있어요.',
 ];

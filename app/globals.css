@@ -21,6 +21,9 @@
 
 .note-font{
     font-family: 'KyoboHandwriting2023wsa', sans-serif !important;
+    /* word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word; */
 }
 
 body{
