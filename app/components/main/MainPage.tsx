@@ -1,20 +1,22 @@
 'use client'
 
-import { useTitleFlagStore } from "@/app/store";
-import DrangonBallContainer from "./DragonballContainer";
-import GenkidamaContainer from "./GenkidamaContainer";
+// import { useTitleFlagStore } from "@/app/store";
+// import DrangonBallContainer from "./DragonballContainer";
+// import GenkidamaContainer from "./GenkidamaContainer";
+import DefaultExplainContainer from "./DefaultExplainContainer";
 
 export default function MainPage(){
 
-    const { titleFlag } = useTitleFlagStore();
+    // const { titleFlag } = useTitleFlagStore();
 
-    return(
-        <div 
-            className={ titleFlag ? "bg-genkidama" : ''}
-            style={{minHeight : titleFlag ? '100vh' : ''}}
-        >
-            <DrangonBallContainer />
-            <GenkidamaContainer />
-        </div>
-    )
+    return <DefaultExplainContainer />
+    // return(
+    //     <div 
+    //         className={ titleFlag ? "bg-genkidama" : ''}
+    //         style={{minHeight : titleFlag ? '100vh' : ''}}
+    //     >
+    //         <DrangonBallContainer />
+    //         <GenkidamaContainer />
+    //     </div>
+    // )
 }

@@ -87,7 +87,7 @@ export const PROJECT_NAME_ARR = [
     {index : 0, explain : '단어 유사도 추측 게임', name : '꼬들꼬들', url : '/project/꼬들꼬들/icon.png'},
     {index : 1, explain : '게임 메이플스토리 BGM/OST 플레이어', name : 'Storify', url : '/project/storify/icon.png'},
     {index : 2, explain : '실시간 위치 추적 지도 앱', name : '불편한 지도', url : '/project/map/icon.png'},
-    {index : 3, explain : '포켓몬 팬게임', name : '로켓단이되', url : '/project/pokemon/icon.png'},
+    {index : 3, explain : '포켓몬 팬게임', name : '포켓몬 미니 게임', url : '/project/pokemon/icon.png'},
     {index : 4, explain : '책 검색 웹사이트', name : '교뿡문고', url : '/project/book/icon.png'},
     {index : 5, explain : '', name : '프로젝트 전체 확인', url : '/project/book/icon.png'},
 ]

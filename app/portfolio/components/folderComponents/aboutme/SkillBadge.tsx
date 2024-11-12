@@ -104,5 +104,6 @@ const FRONTEND_SKILL3 = [
 ]
 
 const BACKEND_SKILL = [
+    {url : "/stack/nodejs.png", name : 'Node.js'},
     {url : "/stack/MongoDB.svg", name : 'MongoDB'},
 ]

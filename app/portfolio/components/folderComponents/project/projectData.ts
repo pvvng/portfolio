@@ -196,7 +196,7 @@ export const STORIFY_RM_DATA :DataType = {
 }
 
 export const POKEMON_RM_DATA :DataType = {
-    name : '로켓단이되',
+    name : '포켓몬 미니 게임',
     simple_explain : 'Poke API를 활용한 포켓몬 팬게임',
     icon : '/project/pokemon/icon.png',
     github_link : 'https://github.com/pvvng/pokemon_game_with_nextjs',
@@ -247,7 +247,7 @@ export const POKEMON_RM_DATA :DataType = {
         '최초로 Next.js를 사용한 프로젝트입니다. 아직 백엔드와 협업 경험이 없기에 비동기 통신에 대한 개념적인 이해만 있고, 실제로 서버와 통신한 경험은 오픈 API 사용 외에는 전무했습니다. 이는 후일 타인과 협업시에 치명적인 결점이 될 수 있으리라고 판단했고, 백엔드와 통신 경험을 작게나마 경험해보는 것이 좋을 것이라 판단했습니다. 다만, 프로젝트를 진행하면서 React.js와는 다른 Next의 장점 (SSR, SEO) 등을 알게되는 시간이 되었습니다.',
         '또한, 백엔드로 mongoDB를 사용했습니다. mongoDB는 NoSQL 문서 지향 데이터 베이스로 데이터를 JSON 문서 형식으로 저장 가능합니다. 백엔드 개발에 대해 무지하기에 커뮤니티가 방대하여 정보를 얻기 쉽고, 문서 저장, 수정등의 관리가 편리한 mongoDB를 데이터베이스로 선택했습니다.',
     ],
-    review : '로켓단이되 프로젝트를 진행 전 비동기 통신에 대한 깊은 이해를 목표로 삼았습니다. fetch, axios 비동기 통신이 어떻게 동작하고 무엇을 반환하는지 받은 데이터의 가공과 저장 방법과 FE와 BE의 통신 방법과 REST API 를 이해하는 시간이 되었습니다. 해당 프로젝트의 핵심 기능이 API를 통한 데이터 호출이었기에 위 개념을 이해하는것은 필수였고, 성공적으로 이루어졌습니다.'
+    review : '포켓몬 미니 게임 프로젝트를 진행 전 비동기 통신에 대한 깊은 이해를 목표로 삼았습니다. fetch, axios 비동기 통신이 어떻게 동작하고 무엇을 반환하는지 받은 데이터의 가공과 저장 방법과 FE와 BE의 통신 방법과 REST API 를 이해하는 시간이 되었습니다. 해당 프로젝트의 핵심 기능이 API를 통한 데이터 호출이었기에 위 개념을 이해하는것은 필수였고, 성공적으로 이루어졌습니다.'
 }
 
 export const MAP_RM_DATA :DataType = {
@@ -340,5 +340,5 @@ export const BOOK_RM_DATA :DataType = {
         {url : '/project/book/메인1.PNG'},
         {url : '/project/book/메인2.PNG'},
     ],
-    review : '교뿡문고는 "Next.js를 활용한 포켓몬 팬게임 - 로켓단이되" 를 진행하기 전에 React-Query의 활용과 이해를 위해 시작한 프로젝트입니다. 프로젝트를 진행하며 React-Query의 기본적인 사용 방법과, data fetching, cache, stale 등의 방법을 익히는 시간이 되었습니다.'
+    review : '교뿡문고는 Next.js를 활용할 계획이었던 프로젝트인 "포켓몬 미니 게임" 를 진행하기 전에 React-Query의 활용과 이해를 위해 시작한 프로젝트입니다. 프로젝트를 진행하며 React-Query의 기본적인 사용 방법과, data fetching, cache, stale 등의 방법을 익히는 시간이 되었습니다.'
 }

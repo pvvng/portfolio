@@ -50,7 +50,7 @@ function setDataByNowProject(nowProjectName : string){
     if(nowProjectName === '불편한 지도'){
         projectData = {...MAP_RM_DATA};
     }
-    if(nowProjectName === '로켓단이되'){
+    if(nowProjectName === '포켓몬 미니 게임'){
         projectData = {...POKEMON_RM_DATA};
     }
     if(nowProjectName === '교뿡문고'){
