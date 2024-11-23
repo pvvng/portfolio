@@ -81,6 +81,7 @@ const COLLABO_SKILL = [
 const DEPLOY_SKILLS = [
     {url : "/stack/vercel.svg", name : 'Vercel'},
     {url : "/stack/Netlify-Dark.svg", name : 'Netlify'},
+    {url : "/stack/aws-elastic-beanstalk.svg", name : 'elastic-beanstalk'},
 ]
 
 const FRONTEND_SKILL1 = [
@@ -98,7 +99,7 @@ const FRONTEND_SKILL2 = [
 
 const FRONTEND_SKILL3 = [
     {url : "/stack/Redux.svg", name : 'Redux toolkit'},
-    {url : "/stack/zustand.png", name : 'Zustand'},
+    {url : "/stack/zustand.svg", name : 'Zustand'},
     {url : "/stack/Sass.svg", name : 'SASS / SCSS'},
     {url : "/stack/StyledComponents.svg", name : 'Styled-components'},
 ]

@@ -15,7 +15,11 @@ export default function HeaderContainer({projectData} : {projectData : DataType}
                     projectData.deploy_link&&
                     <button className="p-btn social-icon-btn bg-white hover-btn">
                         <Link href={projectData.deploy_link} target="_blank" aria-label={'go_to_' + projectData.name}>
-                            <Image src={projectData.icon} width="30" height="30" alt={projectData.name}/>
+                            <img
+                                src={projectData.icon} 
+                                alt={projectData.name}
+                                style={{maxWidth : 30}}
+                            />
                             <span className="tooltip-link">{projectData.name}</span>
                         </Link>
                     </button>

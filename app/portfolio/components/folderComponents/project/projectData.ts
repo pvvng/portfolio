@@ -6,6 +6,7 @@ export interface DataType {
     velog_link ?: string;
     deploy_link ?: string;
     manpower: number;
+    contribute ?: string;
     term: string;
     env: {
         url: string;
@@ -22,7 +23,7 @@ export interface DataType {
     deploy: {
         name :string;
         url : string;
-    };
+    }[];
     light_explain ?: {
         title : string;
     }[]
@@ -35,6 +36,82 @@ export interface DataType {
     }[];
     about ?: string[];
     review :string;
+}
+
+export const BOOK_RM_DATA :DataType = {
+    name : '유튜뷰 YoutuView',
+    simple_explain : '유튜브 댓글 감정 및 키워드 분석 웹앱',
+    icon : '/project/유튜뷰/logo-full.png',
+    github_link : 'https://github.com/pvvng/youtube-comment',
+    deploy_link : 'https://youtuview.netlify.app',
+    manpower : 2,
+    term : '2024.09.02 ~ 진행중',
+    contribute : '프론트엔드 70%, 백엔드 100%',
+    env : [
+        {url : "/stack/Next.svg", name : 'Next.js'},
+        {url : "/stack/TypeScript.svg", name : 'TypeScript'},
+        {url : "/stack/flask.svg", name : 'flask'},
+        {url : "/stack/MongoDB.svg", name : 'MongoDB'},
+    ],
+    manage : [
+        {url : "/stack/Git.svg", name : 'Git'},
+        {url : "/stack/github.png", name : 'Github'},
+    ],
+    library : [
+        {name : 'moment-timezone'},
+        {name : 'next-auth'},
+        {name : 'next-pwa'},
+        {name : 'recharts'},
+        {name : 'react-query', url : '/stack/react-query.png'},
+        {name : 'zustand', url : '/stack/zustand.svg'},
+        {name : 'bootstrap', url : '/stack/bootstrap.svg'},
+        {name : 'fontawesome', url : '/stack/fontawesome.png'},
+    ],
+    deploy : [
+        {url : "/stack/Netlify-Dark.svg", name : 'Netlify'},
+        {url : "/stack/aws-elastic-beanstalk.svg", name : 'elastic beanstalk'},
+    ],
+    light_explain: [
+        {
+            title : '파인 튜닝된 KoBert 기반의 인공지능 모델로 더 세밀한 감정 분석',
+        },
+        {
+            title : '키워드 분석을 위해 konlPy 라이브러리 사용 및 분석 후처리',
+        },
+        {
+            title : 'React-Query의 useQuery, useMutation 훅을 이용한 효율적인 비동기 통신 처리',
+        },
+        {
+            title : '다양한 공격 시도를 방어하기 위한 reCaptch v3, NoSQL injection 방어코드, Rate-Limiting, API KEY 할당',
+        },
+        {
+            title : 'Zustand를 활용한 전역적 상태 관리',
+        },
+        {
+            title : '구글 소셜 로그인',
+        },
+        {
+            title : 'PWA로 네이티브 앱 처럼 다운 가능',
+        },
+        {
+            title : 'Git Flow 전략을 활용하여 관리한 프로젝트'
+        }
+    ],
+    explain : [
+        {
+            title : '유튜브 API를 통해 댓글을 불러와 감정 분석 및 키워드 분석 후 결과를 보여주는 웹사이트입니다.',
+            explain : ''
+        },
+    ],
+    about : [
+        'useMutation 훅의 사용법과 활용에 대해 이해하였습니다.',
+        'flask 서버 배포를 통해 eb cli 사용에 대해 이해하였습니다.',
+        '웹사이트에 가해지는 다양한 공격 방식에 대해 이해하고 방어하는 방법에 학습하는 시간이 되었습니다.',
+    ],
+    read_me : [
+        {url : '/project/유튜뷰/logo-full.png'},
+    ],
+    review : 'Flask 서버의 배포와 배포 과정에서 eb cli 사용법 등을 습득하였습니다. 웹 보안 절차를 강화하는 방법과 이를 UX를 손상시키지 않고 사용하는 방법을 이해했습니다.'
 }
 
 export const KKODLE_RM_DATA :DataType = {
@@ -63,11 +140,11 @@ export const KKODLE_RM_DATA :DataType = {
         {name : 'next-pwa'},
         {name : 'recharts'},
         {name : 'react-query', url : '/stack/react-query.png'},
-        {name : 'zustand', url : '/stack/zustand.png'},
+        {name : 'zustand', url : '/stack/zustand.svg'},
         {name : 'bootstrap', url : '/stack/bootstrap.svg'},
         {name : 'fontawesome', url : '/stack/fontawesome.png'},
     ],
-    deploy : {url : "/stack/Netlify-Dark.svg", name : 'Netlify'},
+    deploy : [{url : "/stack/Netlify-Dark.svg", name : 'Netlify'}],
     light_explain: [
         {
             title : 'TypeScript로 타입 에러 제어',
@@ -146,7 +223,7 @@ export const STORIFY_RM_DATA :DataType = {
         {name : 'bootstrap', url : '/stack/bootstrap.svg'},
         {name : 'fontawesome', url : '/stack/fontawesome.png'},
     ],
-    deploy : {url : "/stack/Netlify-Dark.svg", name : 'Netlify'},
+    deploy : [{url : "/stack/Netlify-Dark.svg", name : 'Netlify'}],
     light_explain : [
         {
             title : 'TypeScript로 타입 에러 제어',
@@ -218,7 +295,7 @@ export const POKEMON_RM_DATA :DataType = {
         {name : 'bootstrap', url : '/stack/bootstrap.svg'},
         {name : 'fontawesome', url : '/stack/fontawesome.png'},
     ],
-    deploy : {url : "/stack/vercel.svg", name : 'Vercel'},
+    deploy : [{url : "/stack/vercel.svg", name : 'Vercel'}],
     light_explain: [
         {
             title : 'PWA 기술을 활용하여 앱처럼 사용 가능한 웹앱',
@@ -272,7 +349,7 @@ export const MAP_RM_DATA :DataType = {
         {name : 'bootstrap', url : '/stack/bootstrap.svg'},
         {name : 'fontawesome', url : '/stack/fontawesome.png'},
     ],
-    deploy : {url : "/stack/vercel.svg", name : 'Vercel'},
+    deploy : [{url : "/stack/vercel.svg", name : 'Vercel'}],
     light_explain : [
         {
             title : 'PWA 기술을 활용하여 앱처럼 사용 가능한 웹앱',
@@ -307,38 +384,4 @@ export const MAP_RM_DATA :DataType = {
         '날씨 공공데이터를 활용하기 위해 여러 과정을 거쳤습니다. 특히, get 요청을 보낼때 기재되어야 하는 위치 좌표 값과 날짜 값 등을 포맷팅 하는 과정을 거쳤습니다. 전송받은 날씨 데이터를 필요한 부분만 가공하여 화면에 보여줌으로서 성공적인 API 활용을 했다고 생각합니다.',
     ],
     review : '불편한 지도는 처음으로 카카오맵 API와 현재 날씨 API 등의 오픈 API를 활용해서 만든 프로젝트입니다. HTTP 비동기 통신을 최초로 경험하면서 프론트엔드 단의 통신 과정에 대한 배움을 얻을 수 있는 프로젝트 였습니다.'
-}
-
-export const BOOK_RM_DATA :DataType = {
-    name : '교뿡문고',
-    simple_explain : '카카오 책 검색 API를 활용해서 만든 간단한 책 검색 웹서비스',
-    icon : '/project/book/icon.png',
-    github_link : 'https://github.com/pvvng/book_with_react',
-    deploy_link : 'https://pvvng.github.io/hostBook/',
-    manpower : 1,
-    term : '2024.05.1 ~ 2024.05.22 (21일)',
-    env : [
-        {url : "/stack/React.svg", name : 'React.js'},
-        {url : "/stack/TailWindCSS-Light.svg", name : 'tailwind'},
-    ],
-    manage : [
-        {url : "/stack/Git.svg", name : 'Git'},
-        {url : "/stack/github.png", name : 'Github'},
-    ],
-    library : [
-        {name : 'fontawesome', url : '/stack/fontawesome.png'},
-    ],
-    deploy : {url : "/stack/github.png", name : 'Github Pages'},
-    explain : [
-        {
-            title : '카카오 책 검색 API를 활용해서 만든 간단한 책 검색 웹서비스입니다.',
-            explain : 'React-Query의 활용과 이해를 위해 시작한 프로젝트입니다.'
-        },
-    ],
-    read_me : [
-        {url : '/project/book/icon.png'},
-        {url : '/project/book/메인1.PNG'},
-        {url : '/project/book/메인2.PNG'},
-    ],
-    review : '교뿡문고는 Next.js를 활용할 계획이었던 프로젝트인 "포켓몬 미니 게임" 를 진행하기 전에 React-Query의 활용과 이해를 위해 시작한 프로젝트입니다. 프로젝트를 진행하며 React-Query의 기본적인 사용 방법과, data fetching, cache, stale 등의 방법을 익히는 시간이 되었습니다.'
 }

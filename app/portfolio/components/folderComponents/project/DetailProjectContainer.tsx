@@ -53,7 +53,7 @@ function setDataByNowProject(nowProjectName : string){
     if(nowProjectName === '포켓몬 미니 게임'){
         projectData = {...POKEMON_RM_DATA};
     }
-    if(nowProjectName === '교뿡문고'){
+    if(nowProjectName === '유튜뷰'){
         projectData = {...BOOK_RM_DATA};
     }
 

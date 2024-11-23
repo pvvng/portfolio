@@ -6,6 +6,7 @@ export default function ProjectBadgeContainer({projectData} : {projectData : Dat
         <div className="bg-dark text-white p-3 rounded-2">
             <p>개발 인력 : {projectData.manpower} 명</p>
             <p>개발 기간 : {projectData.term}</p>
+            {projectData.contribute && <p>기여도 : {projectData.contribute}</p>}
             <p className="m-0">개발 환경</p>    
             {
                 projectData.env.map(badge => 
@@ -38,10 +39,12 @@ export default function ProjectBadgeContainer({projectData} : {projectData : Dat
             }
             <p className="m-0">배포</p>
             {
-                <span key={projectData.deploy.name} className="badge mb-3 bg-white text-black" style={{marginRight : '5px'}}>
-                    <Image src={projectData.deploy.url} width="15" height="15" alt={projectData.deploy.name} />
-                    {' '}{projectData.deploy.name}
-                </span>
+                projectData.deploy.map(badge => 
+                    <span key={badge.name} className="badge mb-3 bg-white text-black" style={{marginRight : '5px'}}>
+                        <Image src={badge.url} width="15" height="15" alt={badge.name} />
+                        {' '}{badge.name}
+                    </span>
+                )
             }
         </div>
     )

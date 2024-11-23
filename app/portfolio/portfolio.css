@@ -1,5 +1,5 @@
-.folder-container{
-    width : 80px;
+.folder-container {
+    width: 80px;
     text-align: center;
     z-index: 1000;
 }
@@ -23,86 +23,95 @@
     border-radius: 5px 5px 0 0;
 }
 
-.percpctive-img{
+.percpctive-img {
     transition: all 1s;
     transform: rotateY(0deg);
     transform-style: preserve-3d;
 }
 
-.taskbar{
+.taskbar {
     position: fixed;
     bottom: 0;
-    left : 0;
-    width : 100%;
+    left: 0;
+    width: 100%;
     z-index: 1000;
     background: #eee;
 }
 
-.social-icon-btn{
+.social-icon-btn {
     background-color: #eee;
-    border : none;
+    border: none;
 }
 
-.social-icon-btn:hover{
+.social-icon-btn:hover {
     background-color: rgb(153, 153, 153);
     border-radius: 10%;
 }
 
-.bg-container{
-    position : absolute; 
-    bottom : 30px; 
-    right : 10px;
+.bg-container {
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
     z-index: 0;
 }
 
 @media screen and (max-width : 700px) {
-    .bg-container{
-        right : 0px;
+    .bg-container {
+        right: 0px;
     }
 }
 
-.background-image{
-    opacity : 0.5;
+.background-image {
+    opacity: 0.5;
     transition: all 0.5s;
 }
 
-.text-tooltip{
+.text-tooltip {
     margin-bottom: 0;
     opacity: 0;
     transition: all 0.5s;
     background-color: white;
-    padding : 10px;
+    padding: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
     border-radius: 5px;
     margin-bottom: 10px;
     color: black;
-    position: relative; 
+    position: relative;
 }
 
 /* 말풍선 꼬리 */
 .text-tooltip::after {
     content: '';
     position: absolute;
-    bottom: 0px; /* 말풍선 아래에 배치 */
-    left: 50%; /* 중앙에 배치 */
-    transform: translateX(-50%); /* 중앙 정렬 */
-    border-width: 10px; /* 삼각형 크기 조절 */
+    bottom: 0px;
+    /* 말풍선 아래에 배치 */
+    left: 50%;
+    /* 중앙에 배치 */
+    transform: translateX(-50%);
+    /* 중앙 정렬 */
+    border-width: 10px;
+    /* 삼각형 크기 조절 */
     border-style: solid;
-    border-color: white transparent transparent transparent; /* 하단에 흰색 삼각형 */
+    border-color: white transparent transparent transparent;
+    /* 하단에 흰색 삼각형 */
 }
 
 .text-tooltip::after {
     content: '';
     position: absolute;
-    bottom: -15px; /* 말풍선 아래에 배치 */
-    left: 50%; /* 중앙에 배치 */
-    transform: translateX(-50%); /* 중앙 정렬 */
+    bottom: -15px;
+    /* 말풍선 아래에 배치 */
+    left: 50%;
+    /* 중앙에 배치 */
+    transform: translateX(-50%);
+    /* 중앙 정렬 */
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 15px solid white; /* 위쪽이 흰색이 되도록 설정 */
+    border-top: 15px solid white;
+    /* 위쪽이 흰색이 되도록 설정 */
 }
 
 .bg-container:hover .background-image {
@@ -114,14 +123,14 @@
 }
 
 @media screen and (max-width : 700px) {
-    .margin-container{
+    .margin-container {
         margin: auto;
     }
 }
 
 /* 윈도우 전체 컨테이너 */
 .window {
-    margin : auto;    
+    margin: auto;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
@@ -151,7 +160,7 @@
     width: 16px;
     height: 16px;
     border: none;
-    border-radius: 50%;
+    border-radius: 9999px;
     cursor: pointer;
 }
 
@@ -187,10 +196,11 @@
 /* 윈도우 내용 컨테이너 */
 .window-content {
     background-color: #fff;
-    overflow-y: auto; /* y축 스크롤 허용 */
+    overflow-y: auto;
+    /* y축 스크롤 허용 */
 }
 
-/* From Uiverse.io by andrew-demchenk0 */ 
+/* From Uiverse.io by andrew-demchenk0 */
 /* copy alert box */
 .info {
     max-width: 240px;
@@ -198,19 +208,20 @@
     border-radius: 8px;
     position: absolute;
 }
-  
+
 .info__icon {
     transform: translateY(-2px);
 }
-  
+
 .info__icon path {
     fill: #fff;
 }
-  
+
 .info__title {
     font-weight: 500;
     font-size: 14px;
     color: #fff;
+
     @media screen and (max-width : 340px) {
         font-size: 10px;
     }
@@ -221,34 +232,40 @@
         transform: translateY(0);
         opacity: 1;
     }
+
     to {
-        transform: translateY(-50px); /* 공중으로 50px 떠오르도록 설정 */
+        transform: translateY(-50px);
+        /* 공중으로 50px 떠오르도록 설정 */
         opacity: 0;
     }
 }
 
 .float-up {
-    animation: floatUp 3s forwards; /* 애니메이션을 3초간 진행하고 끝에서 멈춤 */
+    animation: floatUp 3s forwards;
+    /* 애니메이션을 3초간 진행하고 끝에서 멈춤 */
 }
 
-.thanks-title{
-    color : rgb(157, 157, 157);
+.thanks-title {
+    color: rgb(157, 157, 157);
     font-size: 64px;
 
     @media screen and (max-width:470px) {
         font-size: 48px;
     }
+
     @media screen and (max-width:340px) {
         font-size: 32px;
     }
 }
 
-.thanks-sub-title{
+.thanks-sub-title {
     transform: translateY(-30px);
+
     @media screen and (max-width:470px) {
         font-size: 16px;
         transform: translateY(-25px);
     }
+
     @media screen and (max-width:340px) {
         font-size: 16px;
         transform: translateY(-15px);
@@ -256,28 +273,32 @@
 }
 
 /* loading spinner */
-/* From Uiverse.io by jeremyssocial */ 
+/* From Uiverse.io by jeremyssocial */
 @keyframes blinkCursor {
     50% {
-      border-right-color: transparent;
+        border-right-color: transparent;
     }
-  }
-  
-  @keyframes typeAndDelete {
+}
+
+@keyframes typeAndDelete {
+
     0%,
     10% {
-      width: 0;
+        width: 0;
     }
+
     45%,
     55% {
-      width: 6.2em;
-    } /* adjust width based on content */
+        width: 6.2em;
+    }
+
+    /* adjust width based on content */
     90%,
     100% {
-      width: 0;
+        width: 0;
     }
-  }
-  
+}
+
 .terminal-loader {
     border: 0.1em solid #333;
     background-color: #1a1a1a;
@@ -286,14 +307,14 @@
     font-size: 1em;
     padding: 1.5em 1em;
     width: 12em;
-    margin : auto;
+    margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
 }
-  
+
 .terminal-header {
     position: absolute;
     top: 0;
@@ -306,11 +327,11 @@
     padding: 0 0.4em;
     box-sizing: border-box;
 }
-  
+
 .terminal-controls {
     float: right;
 }
-  
+
 .control {
     display: inline-block;
     width: 0.6em;
@@ -319,32 +340,32 @@
     border-radius: 50%;
     background-color: #777;
 }
-  
+
 .control.close {
     background-color: #e33;
 }
-  
+
 .control.minimize {
     background-color: #ee0;
 }
-  
+
 .control.maximize {
     background-color: #0b0;
 }
-  
+
 .terminal-title {
     float: left;
     line-height: 1.5em;
     color: #eee;
 }
-  
+
 .text {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.2em solid green; /* Cursor */
+    border-right: 0.2em solid green;
+    /* Cursor */
     animation: typeAndDelete 4s steps(11) infinite,
-      blinkCursor 0.5s step-end infinite alternate;
+        blinkCursor 0.5s step-end infinite alternate;
     margin-top: 1.5em;
 }
-  

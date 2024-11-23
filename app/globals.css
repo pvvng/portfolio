@@ -19,83 +19,87 @@
     font-style: normal;
 }
 
-.note-font{
+.note-font {
     font-family: 'KyoboHandwriting2023wsa', sans-serif !important;
     /* word-wrap: break-word;
     word-break: break-word;
     overflow-wrap: break-word; */
 }
 
-body{
-    margin : 0;
+body {
+    margin: 0;
     font-family: 'SBAggroB', sans-serif !important;
 }
 
-p{
+p {
     font-family: 'Pretendard-Regular', sans-serif !important;
 }
 
-button{
+button {
     font-family: 'Pretendard-Regular', sans-serif !important;
 }
 
-div{
+div {
     box-sizing: border-box;
 }
 
-button{
+button {
     font-weight: bold;
 }
 
-img{
-    user-select: none; /* 모든 브라우저에서 텍스트 선택 비활성화 */
-    -webkit-user-select: none; /* Safari와 Chrome을 위한 설정 */
-    -moz-user-select: none; /* Firefox를 위한 설정 */
-    -ms-user-select: none; /* 인터넷 익스플로러를 위한 설정 */
+img {
+    user-select: none;
+    /* 모든 브라우저에서 텍스트 선택 비활성화 */
+    -webkit-user-select: none;
+    /* Safari와 Chrome을 위한 설정 */
+    -moz-user-select: none;
+    /* Firefox를 위한 설정 */
+    -ms-user-select: none;
+    /* 인터넷 익스플로러를 위한 설정 */
 }
 
-.row-center{
+.row-center {
     justify-content: center;
     align-items: center;
-    margin : auto;
+    margin: auto;
 }
 
-.p-btn{
+.p-btn {
     padding: 10px;
     background: none;
     border-radius: 10px;
     transition: all 0.6s;
 }
 
-.c-genkidama{
+.c-genkidama {
     color: rgba(0, 153, 255, 1);
 }
 
-.bg-genkidama{
+.bg-genkidama {
     color: white;
     background: rgba(0, 153, 255, 1);
 }
 
-.btn-genkidama{
+.btn-genkidama {
     color: white;
-    border : 1px solid rgba(0, 153, 255, 1);
+    border: 1px solid rgba(0, 153, 255, 1);
     background: rgba(0, 153, 255, 1);
 }
 
-.btn-genkidama:hover{
-    border : 1px solid rgba(0, 153, 255, 0.7);
+.btn-genkidama:hover {
+    border: 1px solid rgba(0, 153, 255, 0.7);
     background: rgba(0, 153, 255, 0.7);
     color: white;
 }
 
-.btn-white{
+.btn-white {
     color: rgba(0, 153, 255, 1);
-    border : 1px solid rgba(0, 153, 255, 1);
+    border: 1px solid rgba(0, 153, 255, 1);
     background: white;
 }
 
-.btn-white:hover{
-    border : 1px solid white;
+.btn-white:hover {
+    border: 1px solid white;
     background: none;
     color: white;
 }
@@ -104,20 +108,23 @@ img{
     border-radius: 5px;
     transition: all 0.5s;
     cursor: pointer;
-    border : 1px solid #212529;
-    background-color: #212529;
     margin-right: 10px;
+    color: black !important;
+    font-size: 14px !important;
+    border: 1px solid black;
 }
 
-.badge:hover{
+.badge:hover {
     transform: scale(1.1);
-    background-color: white;
-    color : black;
 }
 
 .no-select {
-    user-select: none; /* 모든 브라우저에서 텍스트 선택 비활성화 */
-    -webkit-user-select: none; /* Safari와 Chrome을 위한 설정 */
-    -moz-user-select: none; /* Firefox를 위한 설정 */
-    -ms-user-select: none; /* 인터넷 익스플로러를 위한 설정 */
+    user-select: none;
+    /* 모든 브라우저에서 텍스트 선택 비활성화 */
+    -webkit-user-select: none;
+    /* Safari와 Chrome을 위한 설정 */
+    -moz-user-select: none;
+    /* Firefox를 위한 설정 */
+    -ms-user-select: none;
+    /* 인터넷 익스플로러를 위한 설정 */
 }
