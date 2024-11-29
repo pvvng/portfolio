@@ -43,7 +43,7 @@ export const BOOK_RM_DATA :DataType = {
     simple_explain : '유튜브 댓글 감정 및 키워드 분석 웹앱',
     icon : '/project/유튜뷰/logo-full.png',
     github_link : 'https://github.com/pvvng/youtube-comment',
-    deploy_link : 'https://youtuview.netlify.app',
+    deploy_link : 'https://youtuview.site',
     manpower : 2,
     term : '2024.09.02 ~ 진행중',
     contribute : '프론트엔드 70%, 백엔드 100%',
@@ -76,7 +76,7 @@ export const BOOK_RM_DATA :DataType = {
             title : '파인 튜닝된 KoBert 기반의 인공지능 모델로 더 세밀한 감정 분석',
         },
         {
-            title : '키워드 분석을 위해 konlPy 라이브러리 사용 및 분석 후처리',
+            title : '키워드 분석을 위해 KonlPy 라이브러리 사용 및 분석 후처리',
         },
         {
             title : 'React-Query의 useQuery, useMutation 훅을 이용한 효율적인 비동기 통신 처리',
@@ -100,11 +100,12 @@ export const BOOK_RM_DATA :DataType = {
     explain : [
         {
             title : '유튜브 API를 통해 댓글을 불러와 감정 분석 및 키워드 분석 후 결과를 보여주는 웹사이트입니다.',
-            explain : ''
+            explain : 'React-Query, Zustand, ReCaptch V3 등을 중점적으로 활용했습니다.'
         },
     ],
     about : [
         'useMutation 훅의 사용법과 활용에 대해 이해하였습니다.',
+        'ReCaptcha V3와 GCP, 구글 서치 콘솔 등의 사용 방식을 이해했습니다.',
         'flask 서버 배포를 통해 eb cli 사용에 대해 이해하였습니다.',
         '웹사이트에 가해지는 다양한 공격 방식에 대해 이해하고 방어하는 방법에 학습하는 시간이 되었습니다.',
     ],
