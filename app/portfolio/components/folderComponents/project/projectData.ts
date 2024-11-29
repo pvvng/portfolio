@@ -85,6 +85,9 @@ export const BOOK_RM_DATA :DataType = {
             title : '다양한 공격 시도를 방어하기 위한 reCaptch v3, NoSQL injection 방어코드, Rate-Limiting, API KEY 할당',
         },
         {
+            title : 'Next/Image를 통한 이미지 최적화',
+        },
+        {
             title : 'Zustand를 활용한 전역적 상태 관리',
         },
         {
